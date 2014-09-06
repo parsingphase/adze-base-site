@@ -1,0 +1,38 @@
+{
+    "name": "parsingphase/phaseorg",
+    "description": "Base project package for phase.org",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Richard George",
+            "email": "richard@phase.org"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Phase\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php": "~5.5.9",
+        "silex/silex": "~1.2",
+        "components/bootstrap": "~3.2",
+        "components/jqueryui": "~1.11",
+        "components/handlebars.js": "~2.0",
+        "twig/twig": "~1.16",
+        "doctrine/dbal": "~2.4",
+        "symfony/twig-bridge": "~2.5",
+        "monolog/monolog": "~1.10"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.2",
+        "theseer/phpdox": "~0.6"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    }
+}
