@@ -1,0 +1,15 @@
+<?php
+$appConfig=[];
+
+$appConfig['db.options'] = [
+'user' => 'DBUSER',
+'dbname' => 'DBNAME',
+'charset' => 'utf8',
+'password' => 'DBPASS'
+];
+
+$appConfig['twig.cache.dir'] = '/PATH/TO/sitecaches/adze-site/twig/cache';
+$appConfig['monolog.logfile'] = '/PATH/TO/logs/adze-site.log';
+$appConfig['profiler.cache.dir'] = '/PATH/TO/sitecaches/adze-site/profiler/cache';
+
+return $appConfig;

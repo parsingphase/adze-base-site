@@ -1,0 +1,33 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: parsingphase
+ * Date: 06/09/14
+ * Time: 17:18
+ */
+
+use Phase\Adze\Application;
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+$app = new Application();
+$app->loadConfig(require dirname(__DIR__) . '/config/config.php');
+$app->setupCoreProviders();
+
+//TODO Load & mount controllerProvider(s)
+
+//TODO configure error handling
+
+//TODO replace this route
+
+$app->get(
+    '/',
+    function () use ($app) {
+        return $app->render('unconfigured-site/homepage.html.twig');
+    }
+);
+
+// Set site own template path (last in list; everything else gets a chance to get there first);
+$app->appendTwigLoader(new Twig_Loader_Filesystem(dirname(__DIR__) . '/templates'));
+
+$app->run();
