@@ -11,9 +11,12 @@ namespace Phase\Blog;
 
 use DateTime;
 
+/**
+ * Single blog entry, savable through the Blog class
+ * @package Phase\Blog
+ */
 class BlogPost
 {
-
     const SECURITY_PUBLIC = 'public';
 
     /**

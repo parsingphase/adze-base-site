@@ -11,6 +11,10 @@ namespace Phase\Blog;
 
 use Doctrine\DBAL\Connection;
 
+/**
+ * Access class for posts on a blog
+ * @package Phase\Blog
+ */
 class Blog
 {
 
@@ -19,6 +23,10 @@ class Blog
      */
     protected $dbConnection;
 
+    /**
+     * Set up access class using given DB connection
+     * @param Connection $dbConnection
+     */
     public function __construct(Connection $dbConnection)
     {
         $this->dbConnection = $dbConnection;
@@ -76,6 +84,25 @@ class Blog
             $post = $this->createPostFromDbRow($row);
         }
         return $post;
+    }
+
+    /**
+     * @param int $count
+     * @return BlogPost[]
+     * @throws \InvalidArgumentException
+     */
+    public function fetchRecentPosts($count = 5)
+    {
+        $posts = [];
+        if (!is_int($count)) {
+            throw new \InvalidArgumentException();
+        }
+        $sql = 'SELECT * FROM blog_post ORDER BY time DESC LIMIT ?';
+        $rows = $this->dbConnection->fetchAll($sql, [$count]);
+        foreach ($rows as $row) {
+            $posts[] = $this->createPostFromDbRow($row);
+        }
+        return $posts;
     }
 
     /**

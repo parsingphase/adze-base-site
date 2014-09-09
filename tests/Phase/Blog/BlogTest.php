@@ -105,6 +105,20 @@ class BlogTest extends \PHPUnit_Framework_TestCase
         $newPost = $blog->fetchPostById($presentPostId);
 
         $this->assertTrue($newPost instanceof BlogPost);
+
+        $rawPost = [
+            'subject' => 'Fetch Me First',
+            'body' => 'Earlier Fascinating Content',
+            'time' => date('Y-m-d h:i:s', time() - 3600),
+            'security' => BlogPost::SECURITY_PUBLIC
+        ];
+
+        $this->dbConnection->insert('blog_post', $rawPost);
+
+        $multiPosts = $blog->fetchRecentPosts();
+        $this->assertTrue(is_array($multiPosts));
+        $this->assertSame(2, count($multiPosts));
+        $this->assertTrue($multiPosts[0]->getTime()>$multiPosts[1]->getTime());
     }
 
 }

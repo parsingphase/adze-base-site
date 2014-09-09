@@ -69,6 +69,8 @@
                 <!-- add phploc output -->
                  <source type="phploc" />
 
+                 <source type="phpunit" />
+
                 <!-- add git vcs information -->
                 <!-- -->
                 <source type="git">
