@@ -9,7 +9,9 @@
 namespace Phase\Adze\Exception;
 
 
-class UnpromotedApplicationException extends \Exception
+use Exception;
+
+class UnpromotedApplicationException extends Exception
 {
 
 }

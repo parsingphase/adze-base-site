@@ -30,6 +30,12 @@ class Application extends SilexApplication
     use SilexApplication\MonologTrait;
 
     /**
+     * @var ResourcesControllerProvider
+     * @todo Register in DI store if required
+     */
+    protected $resourceController;
+
+    /**
      * @param SilexApplication $app
      * @return self
      * @throws Exception\UnpromotedApplicationException
@@ -56,6 +62,14 @@ class Application extends SilexApplication
     public function getControllerFactory()
     {
         return $this['controllers_factory'];
+    }
+
+    /**
+     * @return \Phase\Adze\ResourcesControllerProvider
+     */
+    public function getResourceController()
+    {
+        return $this->resourceController;
     }
 
     public function setupCoreProviders()
@@ -90,6 +104,10 @@ class Application extends SilexApplication
         );
         */
 
+        $this->resourceController = new ResourcesControllerProvider();
+        $this->mount('/resources', $this->resourceController);
+
+
         return $this;
     }
 
@@ -107,16 +125,29 @@ class Application extends SilexApplication
         return $this;
     }
 
+    /**
+     * @param $mountPoint
+     * @param ControllerProviderInterface $controller
+     * @param null $templatesPath
+     * @param null|array $resourcesPaths [prefix => path]
+     * @return $this
+     */
     public function enableModule(
         $mountPoint,
         ControllerProviderInterface $controller,
         $templatesPath = null,
-        $resourcesPath = null //TODO add to Resources controller
+        $resourcesPaths = null
     ) {
         $this->mount($mountPoint, $controller);
         if ($templatesPath) {
             $this->appendTwigLoader(new \Twig_Loader_Filesystem($templatesPath));
         }
+        if ($resourcesPaths) {
+            foreach ($resourcesPaths as $k => $v) {
+                $this->getResourceController()->addPathMapping($k, $v);
+            }
+        }
+
         return $this;
     }
 }

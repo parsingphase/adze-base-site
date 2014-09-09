@@ -1,5 +1,7 @@
 <?php
 /**
+ * @TODO Copy this file to index.php to get started quickly
+ *
  * Created by PhpStorm.
  * User: parsingphase
  * Date: 06/09/14
@@ -14,12 +16,13 @@ $app = new Application();
 $app->loadConfig(require dirname(__DIR__) . '/config/config.php');
 $app->setupCoreProviders();
 
-//TODO Load & mount controllerProvider(s)
+$resourceController = $app->getResourceController();
+// Make the components folder accessible through the ResourceController at /resources
+$resourceController->addPathMapping('components', dirname(__DIR__).'/components');
 
 //TODO configure error handling
 
-//TODO replace this route
-
+//TODO replace this route to get real homepage content
 $app->get(
     '/',
     function () use ($app) {

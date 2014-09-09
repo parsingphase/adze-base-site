@@ -39,7 +39,7 @@ class ResourcesControllerProvider implements ControllerProviderInterface
             function (AdzeApplication $app, $path) use ($resourceController) {
                 $out = null;
 
-                $file = $resourceController->mapPath($path);
+                $file = $resourceController->getFileForUri($path);
                 if ($file) {
                     $extension = strtolower($file->getExtension());
                     switch ($extension) {
@@ -66,12 +66,24 @@ class ResourcesControllerProvider implements ControllerProviderInterface
         return $controllers;
     }
 
-    public function addPathMapping($k, $v)
+    /**
+     * Add a directory to allow its files to be accessed through the ResourcesController via a given prefix
+     *
+     * @param $prefix
+     * @param $dirPath
+     */
+    public function addPathMapping($prefix, $dirPath)
     {
-        $this->pathMap[$k] = $v;
+        $this->pathMap[$prefix] = $dirPath;
     }
 
-    public function mapPath($path)
+    /**
+     * Given a URL relative to the controller root, return the file that matches it
+     *
+     * @param $path
+     * @return null|File
+     */
+    public function getFileForUri($path)
     {
         $filePath = null;
         foreach ($this->pathMap as $stem => $dir) {
