@@ -40,6 +40,16 @@
             description="Build and fully test project"
             depends="build-dev,test-built,composer-validate"/>
 
+    <target name="phpunit-no-coverage"
+            description="Run all unit tests on the module (fast, skip coverage generation)">
+        <exec executable="${basedir}/vendor/bin/phpunit" failonerror="true">
+            <!--<arg value="- -coverage-xml=build/coverage"/>-->
+            <arg value="--bootstrap=${basedir}/tests/bootstrap.php"/>
+            <arg value="--colors"/>
+            <arg value="${basedir}/tests"/>
+        </exec>
+    </target>
+
     <target name="phpunit"
             description="Run all unit tests on the module">
         <exec executable="${basedir}/vendor/bin/phpunit" failonerror="true">

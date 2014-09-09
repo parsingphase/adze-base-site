@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bdb4b034e256b50894d7366009e1ec50",
+    "hash": "5469a0bec2d03131dedb37af82f25502",
     "packages": [
         {
             "name": "components/bootstrap",
@@ -3444,7 +3444,7 @@
         "php": "~5.5.9",
         "ext-intl": "*"
     },
-    "platform-dev": [
-
-    ]
+    "platform-dev": {
+        "ext-pdo_sqlite": "*"
+    }
 }
