@@ -14,6 +14,13 @@ use Silex\ControllerCollection;
 use Silex\ControllerProviderInterface;
 use Symfony\Component\HttpFoundation\File\File;
 
+/**
+ * Crude controller for making files from installed libraries available to the frontend.
+ *
+ * Essentially, a dumber but simpler Assetic
+ *
+ * @package Phase\Adze
+ */
 class ResourcesControllerProvider implements ControllerProviderInterface
 {
 

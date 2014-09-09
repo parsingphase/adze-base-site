@@ -21,6 +21,10 @@ use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\UrlGeneratorServiceProvider;
 use Silex\Provider\ValidatorServiceProvider;
 
+/**
+ * Extended Silex Application with selected functionality enabled and with convenient accessor functions
+ * @package Phase\Adze
+ */
 class Application extends SilexApplication
 {
     use SilexApplication\TwigTrait;
@@ -36,8 +40,13 @@ class Application extends SilexApplication
     protected $resourceController;
 
     /**
+     * Checking shim function to ensure that we're using a full Adze Application rather than a base Silex one
+     *
+     * Typically used where a standard Silex interface specifies a Silex\Application but we're relying on receiving
+     * an Adze\Application
+     *
      * @param SilexApplication $app
-     * @return self
+     * @return Application
      * @throws Exception\UnpromotedApplicationException
      */
     public static function assertAdzeApplication(SilexApplication $app)
@@ -48,6 +57,12 @@ class Application extends SilexApplication
         return $app;
     }
 
+    /**
+     * Set application configuration values from an associative array
+     *
+     * @param $config
+     * @return $this
+     */
     public function loadConfig($config)
     {
         foreach ($config as $k => $v) {
@@ -57,6 +72,8 @@ class Application extends SilexApplication
     }
 
     /**
+     * Accessor for the Controller Factory, to help create new Controllers
+     *
      * @return ControllerCollection
      */
     public function getControllerFactory()
@@ -65,6 +82,8 @@ class Application extends SilexApplication
     }
 
     /**
+     * Accessor for the ResourceController, to be able to add new resource directories
+     *
      * @return \Phase\Adze\ResourcesControllerProvider
      */
     public function getResourceController()
@@ -72,12 +91,13 @@ class Application extends SilexApplication
         return $this->resourceController;
     }
 
+    /**
+     * Set up the standard Providers that an Adze application expects to rely on
+     *
+     * @return $this
+     */
     public function setupCoreProviders()
     {
-        //TODO must set up twig(/module) paths before this?
-
-        // TODO create a ResourceProvider to mount at /resources, which can pass through module frontend files
-
         $this->register(new SessionServiceProvider());
         $this->register(new FormServiceProvider());
 
@@ -112,6 +132,8 @@ class Application extends SilexApplication
     }
 
     /**
+     * Get the twig loader so that more template sources can be added
+     *
      * @return \Twig_Loader_Chain
      */
     public function getTwigLoaderChain()
@@ -119,6 +141,12 @@ class Application extends SilexApplication
         return $this['twig.loader'];
     }
 
+    /**
+     * Append a new twig loader pointing to a new source of templates
+     *
+     * @param \Twig_LoaderInterface $loader
+     * @return $this
+     */
     public function appendTwigLoader(\Twig_LoaderInterface $loader)
     {
         $this->getTwigLoaderChain()->addLoader($loader);
@@ -126,6 +154,8 @@ class Application extends SilexApplication
     }
 
     /**
+     * Add a new Controller, mount it, and make its templates and resources available to the application
+     *
      * @param $mountPoint
      * @param ControllerProviderInterface $controller
      * @param null $templatesPath
