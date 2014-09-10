@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>{% block title %}Default Adze site active{% endblock %}</title>
+    <!--suppress HtmlUnknownTarget -->
+    <link type="text/css" media="all" rel="stylesheet"
+          href="/resources/components/bootstrap/css/bootstrap.min.css"/>
+
+</head>
+<body>
+<div class="container">
+
+    <div class="col-md-9">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <div class="col-md-3">
+        {% block sidebar %}
+        {% endblock %}
+    </div>
+</div>
+</body>
+</html>

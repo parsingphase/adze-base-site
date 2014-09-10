@@ -181,6 +181,7 @@ class Application extends SilexApplication
 
     /**
      * Get the twig loader so that more template sources can be added
+     * @deprecated Use getTwigFilesystemLoader
      *
      * @return \Twig_Loader_Chain
      */
@@ -192,6 +193,8 @@ class Application extends SilexApplication
     /**
      * Append a new twig loader pointing to a new source of templates
      *
+     * @deprecated Use getTwigFilesystemLoader
+     *
      * @param \Twig_LoaderInterface $loader
      * @return $this
      */
@@ -202,7 +205,17 @@ class Application extends SilexApplication
     }
 
     /**
+     * @return \Twig_Loader_Filesystem
+     */
+    public function getTwigFilesystemLoader()
+    {
+        return $this['twig.loader.filesystem'];
+    }
+
+    /**
      * Add a new Controller, mount it, and make its templates and resources available to the application
+     *
+     * @deprecated possibly not entirely necessary as modules can define their own template paths / namespaces
      *
      * @param $mountPoint
      * @param ControllerProviderInterface $controller

@@ -33,7 +33,7 @@ class BlogController
     public function indexAction()
     {
         $posts = $this->blog->fetchRecentPosts();
-        return $this->app->render('blog/index.html.twig', ['posts'=>$posts]);
+        return $this->app->render('@blog/index.html.twig', ['posts'=>$posts]);
     }
 
 }
