@@ -97,8 +97,8 @@ class Blog
         if (!is_int($count)) {
             throw new \InvalidArgumentException();
         }
-        $sql = 'SELECT * FROM blog_post ORDER BY time DESC LIMIT ?';
-        $rows = $this->dbConnection->fetchAll($sql, [$count]);
+        $sql = 'SELECT * FROM blog_post ORDER BY `time` DESC LIMIT ' . $count;
+        $rows = $this->dbConnection->fetchAll($sql);
         foreach ($rows as $row) {
             $posts[] = $this->createPostFromDbRow($row);
         }

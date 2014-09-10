@@ -9,6 +9,7 @@
 namespace Phase\Adze;
 
 
+use Doctrine\DBAL\Connection;
 use Phase\Adze\Exception\UnpromotedApplicationException;
 use Silex\Application as SilexApplication;
 use Silex\ControllerCollection;
@@ -92,6 +93,14 @@ class Application extends SilexApplication
     public function getResourceController()
     {
         return $this->resourceController;
+    }
+
+    /**
+     * @return Connection
+     */
+    public function getDatabaseConnection()
+    {
+        return $this['db'];
     }
 
     /**
