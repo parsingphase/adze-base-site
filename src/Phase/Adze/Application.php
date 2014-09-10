@@ -15,11 +15,14 @@ use Silex\ControllerCollection;
 use Silex\ControllerProviderInterface;
 use Silex\Provider\DoctrineServiceProvider;
 use Silex\Provider\FormServiceProvider;
+use Silex\Provider\RememberMeServiceProvider;
+use Silex\Provider\SecurityServiceProvider;
 use Silex\Provider\ServiceControllerServiceProvider;
 use Silex\Provider\SessionServiceProvider;
 use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\UrlGeneratorServiceProvider;
 use Silex\Provider\ValidatorServiceProvider;
+use SimpleUser\UserServiceProvider;
 
 /**
  * Extended Silex Application with selected functionality enabled and with convenient accessor functions
@@ -98,6 +101,37 @@ class Application extends SilexApplication
      */
     public function setupCoreProviders()
     {
+
+        $this->register(
+            new SecurityServiceProvider(),
+            array(
+                'security.firewalls' => array(
+                    'secured_area' => array(
+                        'pattern' => '^.*$',
+                        'anonymous' => true,
+                        'remember_me' => array(),
+                        'form' => array(
+                            'login_path' => '/user/login',
+                            'check_path' => '/user/login_check',
+                        ),
+                        'logout' => array(
+                            'logout_path' => '/user/logout',
+                        ),
+                        'users' => $this->share(
+                                function ($app) {
+                                    return $app['user.manager'];
+                                }
+                            ),
+                    ),
+                ),
+            )
+        );
+
+        // Notes from https://github.com/jasongrimes/silex-simpleuser
+        // Note: As of this writing, RememberMeServiceProvider must be registered *after* SecurityServiceProvider or SecurityServiceProvider
+        // throws 'InvalidArgumentException' with message 'Identifier "security.remember_me.service.secured_area" is not defined.'
+        $this->register(new RememberMeServiceProvider());
+
         $this->register(new SessionServiceProvider());
         $this->register(new FormServiceProvider());
 
@@ -127,6 +161,11 @@ class Application extends SilexApplication
         $this->resourceController = new ResourcesControllerProvider();
         $this->mount('/resources', $this->resourceController);
 
+        // Register the SimpleUser service provider.
+        $this->register($u = new UserServiceProvider());
+
+        // Optionally mount the SimpleUser controller provider.
+        $this->mount('/user', $u);
 
         return $this;
     }
@@ -180,4 +219,5 @@ class Application extends SilexApplication
 
         return $this;
     }
+
 }

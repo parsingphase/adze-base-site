@@ -1,16 +1,36 @@
-<!--suppress HtmlUnknownTarget -->
 <!DOCTYPE html>
 <html lang="en">
 <head><title>Default Adze site active</title>
-    <link type="text/css" media="all" rel="stylesheet" href="/resources/components/bootstrap/css/bootstrap.min.css"/>
+    <!--suppress HtmlUnknownTarget -->
+    <link type="text/css" media="all" rel="stylesheet"
+          href="/resources/components/bootstrap/css/bootstrap.min.css"/>
 
 </head>
 <body>
 <div class="container">
-    <h1>Adze site operational</h1>
 
-    <p>To replace this content, edit web/index.php to set a new root for the "/" path and load other Modules and
-        Controllers.</p>
+    <div class="col-md-9">
+        <h1>Adze site operational</h1>
+
+        <p>To replace this content, edit web/index.php to set a new root for the "/" path and load other Modules and
+            Controllers.</p>
+    </div>
+
+    <div class="col-md-3">
+        <div class="well well-sm text-center" style="margin-top: 20px">
+            Loaded: {{ time|date("H:i:s") }}
+        </div>
+
+        <div class="well well-sm text-center" style="margin-top: 20px">
+            {% if user %}
+                <p>Logged in as {{ user }}</p>
+                <p><a href="{{ path('user.logout') }}">Logout</a></p>
+            {% else %}
+                <p>Anonymous user</p>
+                <p><a href="{{ path('user.login') }}">Login</a></p>
+            {% endif %}
+        </div>
+    </div>
 </div>
 </body>
 </html>
