@@ -13,7 +13,7 @@
                         {{ post.subject }}
                     </div>
                     <div class="panel-body">
-                        {{ post.body }}
+                        {{ post.body|raw|nl2br }}
                     </div>
                     <div class="panel-footer">
                         <div class="pull-right">
