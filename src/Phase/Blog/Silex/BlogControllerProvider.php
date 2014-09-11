@@ -52,9 +52,14 @@ class BlogControllerProvider implements ControllerProviderInterface
         );
 
         $controllers->get(
+            '/{uid}_{slug}',
+            'blog.controller:singlePostAction'
+        )->bind('blog.post');
+
+        $controllers->get(
             '/',
             'blog.controller:indexAction'
-        );
+        )->bind('blog.index');
 
         return $controllers;
 

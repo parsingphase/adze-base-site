@@ -14,13 +14,5 @@
         Loaded: {{ time|date("H:i:s") }}
     </div>
 
-    <div class="well well-sm text-center" style="margin-top: 20px">
-        {% if user %}
-            <p>Logged in as {{ user }} {% if is_granted('ROLE_ADMIN') %}(ADMIN){% endif %}</p>
-            <p><a href="{{ path('user.logout') }}">Logout</a></p>
-        {% else %}
-            <p>Anonymous user</p>
-            <p><a href="{{ path('user.login') }}">Login</a></p>
-        {% endif %}
-    </div>
+    {{ parent() }}
 {% endblock %}

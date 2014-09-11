@@ -9,13 +9,22 @@
 <body>
 <div class="container">
 
-    <div class="col-md-9">
+    <div class="col-sm-9">
         {% block content %}
         {% endblock %}
     </div>
 
-    <div class="col-md-3">
+    <div class="col-sm-3">
         {% block sidebar %}
+            <div class="well well-sm text-center" style="margin-top: 20px">
+                {% if app.user %}
+                    <p>Logged in as {{ app.user.name }} {% if is_granted('ROLE_ADMIN') %}(ADMIN){% endif %}</p>
+                    <p><a href="{{ path('user.logout') }}">Logout</a></p>
+                {% else %}
+                    <p>Anonymous user</p>
+                    <p><a href="{{ path('user.login') }}">Login</a></p>
+                {% endif %}
+            </div>
         {% endblock %}
     </div>
 </div>

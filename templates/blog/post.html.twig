@@ -1,0 +1,22 @@
+{% extends 'layout.html.twig' %}
+
+{% block title %}{{ post.subject }} | Blog{% endblock %}
+
+{% block content %}
+    <div style="margin-top: 20px">
+        <div class="pull-right">{{ post.time|date('Y-m-d h:i') }}</div>
+
+        <h1>{{ post.subject }}</h1>
+
+        <div class="well">
+            {{ post.body }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block sidebar %}
+    {{ parent() }}
+    <div class="well">
+        <a href="{{ path('blog.index') }}">Back to blog index</a>
+    </div>
+{% endblock %}

@@ -1,6 +1,32 @@
-<p>BLOGINDEX</p>
-{% if posts %}
-    GOT POSTS
-{% else %}
-    NO POSTS
-{% endif %}
+{% extends 'layout.html.twig' %}
+
+{% block title %}Blog{% endblock %}
+
+{% block content %}
+    <div style="margin-top: 20px">
+        <h1>Blog index</h1>
+        {% if posts %}
+            {% for post in posts %}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="pull-right">{{ post.time|date('Y-m-d h:i') }}</div>
+                        {{ post.subject }}
+                    </div>
+                    <div class="panel-body">
+                        {{ post.body }}
+                    </div>
+                    <div class="panel-footer">
+                        <div class="pull-right">
+                            <a href="{{ path('blog.post',{uid: post.id, slug: post.subject|lower}) }}">Permalink</a>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="bg-warning">
+                No posts yet
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}

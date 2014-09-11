@@ -33,7 +33,14 @@ class BlogController
     public function indexAction()
     {
         $posts = $this->blog->fetchRecentPosts();
-        return $this->app->render('@blog/index.html.twig', ['posts'=>$posts]);
+        return $this->app->render('@blog/index.html.twig', ['posts' => $posts]);
+    }
+
+    public function singlePostAction($uid, $slug)
+    {
+        //TODO check slug
+        $post = $this->blog->fetchPostById($uid);
+        return $this->app->render('@blog/post.html.twig', ['post' => $post]);
     }
 
 }

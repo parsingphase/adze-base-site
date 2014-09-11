@@ -115,6 +115,7 @@ class Blog
         $post->setId($row['id']);
         $post->setSubject($row['subject']);
         $post->setTime(new \DateTime($row['time']));
+        $post->setBody($row['body']);
         $post->setSecurity($row['security']);
         return $post;
     }
