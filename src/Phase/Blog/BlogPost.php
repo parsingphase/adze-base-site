@@ -123,4 +123,13 @@ class BlogPost
         return $this->time;
     }
 
+    public function getSlug()
+    {
+        $slug = $this->getSubject();
+        $slug = preg_replace('/[\'"`]/', '', $slug);
+        $slug = preg_replace('/[^a-z0-9]/i', '_', $slug);
+        $slug = preg_replace('/_{2,}/', '_', $slug);
+        return (strtolower($slug));
+    }
+
 }

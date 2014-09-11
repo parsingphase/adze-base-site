@@ -9,7 +9,7 @@
             {% for post in posts %}
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <div class="pull-right">{{ post.time|date('Y-m-d h:i') }}</div>
+                        <div class="pull-right">{{ post.time|date('Y-m-d H:i') }}</div>
                         {{ post.subject }}
                     </div>
                     <div class="panel-body">
@@ -17,7 +17,7 @@
                     </div>
                     <div class="panel-footer">
                         <div class="pull-right">
-                            <a href="{{ path('blog.post',{uid: post.id, slug: post.subject|lower}) }}">Permalink</a>
+                            <a href="{{ path('blog.post',{uid: post.id, slug: post.slug}) }}">Permalink</a>
                         </div>
                         <div class="clearfix"></div>
                     </div>

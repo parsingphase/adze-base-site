@@ -61,6 +61,11 @@ class BlogControllerProvider implements ControllerProviderInterface
             'blog.controller:archiveAction'
         )->bind('blog.archive');
 
+        $controllers->match(
+            '/{uid}_{slug}/edit',
+            'blog.controller:editPostAction'
+        )->bind('blog.editPost')->assert('uid', '\d+')->method('POST|GET');
+
         $controllers->get(
             '/{uid}_{slug}',
             'blog.controller:singlePostAction'

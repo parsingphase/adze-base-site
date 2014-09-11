@@ -8,7 +8,7 @@
         <div class="well">
             {% if is_granted('ROLE_ADMIN') %}
                 {#<form action="#" method="post" role="form">#}
-                {% set form = newPostForm %}
+                {% set form = blogPostForm %}
                 {{ form_start(form) }}
                 {{ form_errors(form) }}
 

@@ -25,7 +25,7 @@ use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\UrlGeneratorServiceProvider;
 use Silex\Provider\ValidatorServiceProvider;
 use SimpleUser\UserServiceProvider;
-use Symfony\Component\Form\FormFactoryInterface;
+use Symfony\Component\Form\FormFactory;
 use Symfony\Component\Security\Core\SecurityContext;
 
 /**
@@ -219,7 +219,7 @@ class Application extends SilexApplication
     /**
      * Builds and returns the factory.
      *
-     * @return FormFactoryInterface The form factory.
+     * @return FormFactory
      */
     public function getFormFactory()
     {

@@ -41,23 +41,35 @@ class Blog
     public function savePost(BlogPost $blogPost)
     {
         $return = false;
-        if (!$blogPost->getId()) {
+        if ($blogPost->getId()) {
+            $updateCount = $this->dbConnection->update(
+                'blog_post',
+                [
+                    'time' => $blogPost->getTime()->format('Y-m-d H:i:s'),
+                    'subject' => $blogPost->getSubject(),
+                    'body' => $blogPost->getBody(),
+                    'security' => $blogPost->getSecurity()
+                ],
+                ['id' => $blogPost->getId()]
+            );
 
+            $return=(bool)$updateCount;
+        } else {
             if (!$blogPost->getTime()) {
                 $blogPost->setTime(new \DateTime());
             }
 
-            $insertCount = $this->dbConnection->insert(
+            $updateCount = $this->dbConnection->insert(
                 'blog_post',
                 [
-                    'time' => $blogPost->getTime()->format('Y-m-d h:i:s'),
+                    'time' => $blogPost->getTime()->format('Y-m-d H:i:s'),
                     'subject' => $blogPost->getSubject(),
                     'body' => $blogPost->getBody(),
                     'security' => $blogPost->getSecurity()
                 ]
             );
 
-            if ($insertCount) {
+            if ($updateCount) {
                 $id = $this->dbConnection->lastInsertId();
                 if ($id) {
                     $blogPost->setId($id);

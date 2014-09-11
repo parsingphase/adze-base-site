@@ -9,7 +9,10 @@
  - Create cli script to make DBAL connection from `$appConfig['db.options']` and build schemas with that
  - Migrate old DB blog content
  - Implement add, update functionality to blog, using user access control (use is_granted('ROLE_ADMIN') for now)
+ - Implement proper logging & error handling
  - Recreate phase.org template in bootstrap 3
  - Refactor user management to expose only required functionality
+ - Refactor Adze, Blog to own composer modules
+ - Resync index.php
  - Interface to Twitter, Medium, Quora etc
  - Implement OpenID identity provider

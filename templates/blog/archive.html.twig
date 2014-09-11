@@ -9,8 +9,8 @@
             <div class="well">
                 {% for post in posts %}
                     <p>
-                        {{ post.time|date('Y-m-d h:i') }}
-                        <a href="{{ path('blog.post',{uid: post.id, slug: post.subject|lower}) }}">{{ post.subject }}</a>
+                        {{ post.time|date('Y-m-d H:i') }}
+                        <a href="{{ path('blog.post',{uid: post.id, slug: post.slug}) }}">{{ post.subject }}</a>
                     </p>
                 {% endfor %}
             </div>
