@@ -105,6 +105,23 @@ class Blog
         return $posts;
     }
 
+
+    /**
+     * @return BlogPost[]
+     * @throws \InvalidArgumentException
+     */
+    public function fetchAllPostsNoBody()
+    {
+        $posts = [];
+
+        $sql = 'SELECT id,`time`,subject,security, null as body FROM blog_post ORDER BY `time` DESC';
+        $rows = $this->dbConnection->fetchAll($sql);
+        foreach ($rows as $row) {
+            $posts[] = $this->createPostFromDbRow($row);
+        }
+        return $posts;
+    }
+
     /**
      * @param $row
      * @return BlogPost

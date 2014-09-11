@@ -51,10 +51,20 @@ class BlogControllerProvider implements ControllerProviderInterface
             }
         );
 
+        $controllers->match(
+            '/newPost',
+            'blog.controller:newPostAction'
+        )->bind('blog.newPost')->method('POST|GET');
+
+        $controllers->get(
+            '/archive',
+            'blog.controller:archiveAction'
+        )->bind('blog.archive');
+
         $controllers->get(
             '/{uid}_{slug}',
             'blog.controller:singlePostAction'
-        )->bind('blog.post');
+        )->bind('blog.post')->assert('uid', '\d+');
 
         $controllers->get(
             '/',

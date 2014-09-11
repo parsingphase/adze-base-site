@@ -25,9 +25,12 @@
         "doctrine/dbal": "~2.4",
         "symfony/twig-bridge": "~2.5",
         "symfony/form": "~2.5",
+        "symfony/security": "~2.5",
+        "symfony/validator": "~2.5",
+        "symfony/config": "~2.5",
+        "symfony/translation": "~2.5",
         "monolog/monolog": "~1.10",
         "ext-intl": "*",
-        "symfony/security": "~2.5",
         "jasongrimes/silex-simpleuser": "~1.0"
     },
     "require-dev": {

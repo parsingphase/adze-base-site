@@ -20,10 +20,13 @@ use Silex\Provider\RememberMeServiceProvider;
 use Silex\Provider\SecurityServiceProvider;
 use Silex\Provider\ServiceControllerServiceProvider;
 use Silex\Provider\SessionServiceProvider;
+use Silex\Provider\TranslationServiceProvider;
 use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\UrlGeneratorServiceProvider;
 use Silex\Provider\ValidatorServiceProvider;
 use SimpleUser\UserServiceProvider;
+use Symfony\Component\Form\FormFactoryInterface;
+use Symfony\Component\Security\Core\SecurityContext;
 
 /**
  * Extended Silex Application with selected functionality enabled and with convenient accessor functions
@@ -142,6 +145,7 @@ class Application extends SilexApplication
         $this->register(new RememberMeServiceProvider());
 
         $this->register(new SessionServiceProvider());
+        $this->register(new TranslationServiceProvider()); // required for default form views
         $this->register(new FormServiceProvider());
 
         $this->register(new DoctrineServiceProvider());
@@ -210,6 +214,24 @@ class Application extends SilexApplication
     public function getTwigFilesystemLoader()
     {
         return $this['twig.loader.filesystem'];
+    }
+
+    /**
+     * Builds and returns the factory.
+     *
+     * @return FormFactoryInterface The form factory.
+     */
+    public function getFormFactory()
+    {
+        return $this['form.factory'];
+    }
+
+    /**
+     * @return SecurityContext
+     */
+    public function getSecurityContext()
+    {
+        return $this['security'];
     }
 
     /**
