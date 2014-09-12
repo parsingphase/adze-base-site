@@ -28,6 +28,7 @@ use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\UrlGeneratorServiceProvider;
 use Silex\Provider\ValidatorServiceProvider;
 use Symfony\Component\Form\FormFactory;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\SecurityContext;
 
 /**
@@ -287,34 +288,26 @@ class Application extends SilexApplication
         return $this['monolog'];
     }
 
-    /**
-     * Add a new Controller, mount it, and make its templates and resources available to the application
-     *
-     * @deprecated possibly not entirely necessary as modules can define their own template paths / namespaces
-     *
-     * @param $mountPoint
-     * @param ControllerProviderInterface $controller
-     * @param null $templatesPath
-     * @param null|array $resourcesPaths [prefix => path]
-     * @return $this
-     */
-    public function enableModule(
-        $mountPoint,
-        ControllerProviderInterface $controller,
-        $templatesPath = null,
-        $resourcesPaths = null
-    ) {
-        $this->mount($mountPoint, $controller);
-        if ($templatesPath) {
-            $this->appendTwigLoader(new \Twig_Loader_Filesystem($templatesPath));
-        }
-        if ($resourcesPaths) {
-            foreach ($resourcesPaths as $k => $v) {
-                $this->getResourceController()->addPathMapping($k, $v);
-            }
-        }
 
-        return $this;
+    public function setUpDefaultHomepage()
+    {
+        $app = $this;
+        $app->get(
+            '/',
+            function (Request $request) use ($app) {
+                $viewData = [
+                    'user' => $app->user() ? (string)$app->user()->getName() : null,
+                    'time' => new \DateTime(),
+                    'error' => $app['security.last_error']($request),
+                    'last_username' => $app['session']->get('_security.last_username'),
+                ];
+
+                return $app->render(
+                    'homepage.html.twig',
+                    $viewData
+                );
+            }
+        );
     }
 
 }
