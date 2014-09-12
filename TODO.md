@@ -10,7 +10,7 @@
  - ✓ Migrate old DB blog content
  - ✓ Implement add, update functionality to blog, using user access control (use is_granted('ROLE_ADMIN') for now)
  - ✓ Allow selection of blog post security
- - Implement proper logging & error handling
+ - ✓ Implement proper logging & error handling
  - Use proper blog CSS file
  - Recreate phase.org template in bootstrap 3
  - Refactor user management to expose only required functionality

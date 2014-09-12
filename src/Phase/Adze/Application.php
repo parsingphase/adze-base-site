@@ -11,11 +11,13 @@ namespace Phase\Adze;
 
 use Doctrine\DBAL\Connection;
 use Phase\Adze\Exception\UnpromotedApplicationException;
+use Psr\Log\LoggerInterface;
 use Silex\Application as SilexApplication;
 use Silex\ControllerCollection;
 use Silex\ControllerProviderInterface;
 use Silex\Provider\DoctrineServiceProvider;
 use Silex\Provider\FormServiceProvider;
+use Silex\Provider\MonologServiceProvider;
 use Silex\Provider\RememberMeServiceProvider;
 use Silex\Provider\SecurityServiceProvider;
 use Silex\Provider\ServiceControllerServiceProvider;
@@ -91,7 +93,7 @@ class Application extends SilexApplication
     /**
      * Accessor for the ResourceController, to be able to add new resource directories
      *
-     * @return \Phase\Adze\ResourcesControllerProvider
+     * @return ResourcesControllerProvider
      */
     public function getResourceController()
     {
@@ -113,7 +115,7 @@ class Application extends SilexApplication
      */
     public function setupCoreProviders()
     {
-
+        $this->register(new MonologServiceProvider());
         $this->register(
             new SecurityServiceProvider(),
             array(
@@ -184,6 +186,49 @@ class Application extends SilexApplication
     }
 
     /**
+     * Set up a default error page & logging
+     */
+    public function setUpErrorHandling()
+    {
+        $app = $this;
+        $this->error(
+            function (\Exception $e, $code) use ($app) {
+                $response = null;
+
+                if (!$app['debug']) { // Keep default output if debug's on
+                    switch ($code) {
+                        case 404:
+                            $message = 'The requested page could not be found.';
+                            break;
+                        case 403:
+                            $message = 'The requested page is not available.';
+                            break;
+                        default:
+                            $message = 'Sorry, an internal error occurred.';
+                    }
+
+                    if (!in_array($code, [403, 404])) {
+                        // Don't log 403/404 errors, far too much noise
+                        //TODO put more context in here
+                        $logMessage = $e->getMessage();
+                        if (!$logMessage) {
+                            if ($e) {
+                                $logMessage = 'Threw ' . get_class($e);
+                            } else {
+                                $logMessage = 'Error thrown without exception';
+                            }
+                        }
+                        $this->getLogger()->error("ADZE: $code: " . $logMessage);
+                    }
+
+                    $response = $this->render('error.html.twig', ['code' => $code, 'message' => $message]);
+                }
+                return $response;
+            }
+        );
+    }
+
+    /**
      * Get the twig loader so that more template sources can be added
      * @deprecated Use getTwigFilesystemLoader
      *
@@ -232,6 +277,14 @@ class Application extends SilexApplication
     public function getSecurityContext()
     {
         return $this['security'];
+    }
+
+    /**
+     * @return LoggerInterface
+     */
+    public function getLogger()
+    {
+        return $this['monolog'];
     }
 
     /**
