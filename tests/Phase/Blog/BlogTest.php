@@ -174,5 +174,4 @@ class BlogTest extends \PHPUnit_Framework_TestCase
         $pastPosts = $blog->fetchAllPostsNoBody(false, true);
         $this->assertEquals(3, count($pastPosts), 'Expecting 3 past posts in archive');
     }
-
 }

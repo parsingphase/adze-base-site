@@ -23,6 +23,13 @@ use Symfony\Component\Security\Core\Exception\AccessDeniedException;
  */
 class UserServiceProvider extends SimpleUserServiceProvider
 {
+    /**
+     * Registers services on the given app.
+     *
+     * Used here to customise the templates used by the UserController
+     *
+     * @param SilexApplication $app An Application instance
+     */
     public function register(SilexApplication $app)
     {
         parent::register($app);
@@ -38,6 +45,13 @@ class UserServiceProvider extends SimpleUserServiceProvider
         );
     }
 
+    /**
+     * Bootstraps the application. Here, adds our own local user template path
+     *
+     * This method is called after all services are registered
+     * and should be used for "dynamic" configuration (whenever
+     * a service must be requested).
+     */
     public function boot(SilexApplication $app)
     {
         $moduleRoot = dirname(dirname(dirname(dirname(__DIR__)))); // really need neater ways of getting path roots...
@@ -48,6 +62,15 @@ class UserServiceProvider extends SimpleUserServiceProvider
     }
 
 
+    /**
+     * Returns routes to connect to the given application.
+     * Customised to disable some routes if $app['user.allowUserAdmin'] is unset or falsy
+     *
+     * @param SilexApplication $app An Application instance
+     *
+     * @return ControllerCollection A ControllerCollection instance
+     * @throws \LogicException if ServiceController service provider is not registered.
+     */
     public function connect(SilexApplication $app)
     {
         if (!$app['resolver'] instanceof ServiceControllerResolver) {
@@ -116,5 +139,4 @@ class UserServiceProvider extends SimpleUserServiceProvider
 
         return $controllers;
     }
-
 }

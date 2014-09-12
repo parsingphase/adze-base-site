@@ -24,6 +24,9 @@ use Symfony\Component\HttpFoundation\File\File;
 class ResourcesControllerProvider implements ControllerProviderInterface
 {
 
+    /**
+     * @var array Map of [prefix => absolute path]. Prefixes can include /s
+     */
     protected $pathMap = [];
 
     /**
@@ -76,8 +79,8 @@ class ResourcesControllerProvider implements ControllerProviderInterface
     /**
      * Add a directory to allow its files to be accessed through the ResourcesController via a given prefix
      *
-     * @param $prefix
-     * @param $dirPath
+     * @param string $prefix Prefix that will be matched in any URL calls to the ResourcesController
+     * @param string $dirPath Absolute directory path to be mapped under this prefix
      */
     public function addPathMapping($prefix, $dirPath)
     {

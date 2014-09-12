@@ -63,6 +63,8 @@
     <target name="phpcs"
             description="Run PHP Codesniffer with PSR2 standard">
         <exec executable="${basedir}/vendor/bin/phpcs" failonerror="true">
+            <arg value="-n"/>
+            <!-- no warnings -->
             <arg value="--standard=PSR2"/>
             <arg value="${basedir}/src"/>
             <arg value="${basedir}/tests"/>
@@ -88,5 +90,12 @@
         <exec executable="composer" dir="${basedir}" failonerror="true">
             <arg value="validate"/>
         </exec>
+    </target>
+
+    <target name="clean-artefacts">
+        <delete includeemptydirs="true">
+            <fileset dir="${basedir}/build" includes="**/*"/>
+        </delete>
+        <touch file="${basedir}/build/.placeholder"/>
     </target>
 </project>

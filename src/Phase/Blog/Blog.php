@@ -99,6 +99,8 @@ class Blog
     }
 
     /**
+     * Fetch $count of the most recent posts ordered newest-first, taking future time & security into account
+     *
      * @param int $count
      * @param bool $publicOnly
      * @param bool $pastOnly
@@ -142,6 +144,8 @@ class Blog
 
 
     /**
+     * Fetch all posts ordered newest-first, but don't load their bodies; use for archive lists etc
+     *
      * @param bool $publicOnly
      * @param bool $pastOnly
      * @return BlogPost[]
@@ -180,6 +184,8 @@ class Blog
     }
 
     /**
+     * Create a post class from raw DB row / array
+     *
      * @param $row
      * @return BlogPost
      */

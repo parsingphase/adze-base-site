@@ -16,8 +16,9 @@ use Silex\ControllerCollection;
 use Silex\ControllerProviderInterface;
 
 /**
+ * Silex routing and controller setup for blog-related pages
+ *
  * @see Silex book chapter 6, ControllerProviders
- * Class SilexControllerProvider
  * @TODO rename to ....\Silex\BlogControllerProvider?
  * @package Phase\Blog
  */

@@ -103,6 +103,8 @@ class Application extends SilexApplication
     }
 
     /**
+     * Get the default DB connection for the app
+     *
      * @return Connection
      */
     public function getDatabaseConnection()
@@ -134,10 +136,10 @@ class Application extends SilexApplication
                             'logout_path' => '/user/logout',
                         ),
                         'users' => $this->share(
-                                function ($app) {
-                                    return $app['user.manager'];
-                                }
-                            ),
+                            function ($app) {
+                                return $app['user.manager'];
+                            }
+                        ),
                     ),
                 ),
             )
@@ -242,20 +244,8 @@ class Application extends SilexApplication
     }
 
     /**
-     * Append a new twig loader pointing to a new source of templates
+     * Return the Twig Filesystem Loader so we can prepend/append template paths
      *
-     * @deprecated Use getTwigFilesystemLoader
-     *
-     * @param \Twig_LoaderInterface $loader
-     * @return $this
-     */
-    public function appendTwigLoader(\Twig_LoaderInterface $loader)
-    {
-        $this->getTwigLoaderChain()->addLoader($loader);
-        return $this;
-    }
-
-    /**
      * @return \Twig_Loader_Filesystem
      */
     public function getTwigFilesystemLoader()
@@ -274,6 +264,8 @@ class Application extends SilexApplication
     }
 
     /**
+     * Get the security context so we can check grants
+     *
      * @return SecurityContext
      */
     public function getSecurityContext()
@@ -282,6 +274,8 @@ class Application extends SilexApplication
     }
 
     /**
+     * Get the logger instance
+     *
      * @return LoggerInterface
      */
     public function getLogger()
@@ -290,6 +284,8 @@ class Application extends SilexApplication
     }
 
     /**
+     * Get the Session instance
+     *
      * @return Session
      */
     public function getSession()
@@ -342,5 +338,4 @@ class Application extends SilexApplication
             }
         );
     }
-
 }

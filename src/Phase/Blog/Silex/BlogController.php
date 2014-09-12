@@ -17,6 +17,10 @@ use Symfony\Component\Form\FormBuilder;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
+/**
+ * Silex Controller for blog-related pages
+ * @package Phase\Blog\Silex
+ */
 class BlogController
 {
     /**
@@ -165,5 +169,4 @@ class BlogController
         $form = $formBuilder->getForm();
         return $form;
     }
-
 }

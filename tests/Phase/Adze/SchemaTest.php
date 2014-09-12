@@ -82,5 +82,4 @@ class SchemaTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($tablesPresent, $madeTables);
 
     }
-
 }
