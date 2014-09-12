@@ -3,7 +3,7 @@
 {% block title %}{{ post.subject }} | Blog{% endblock %}
 
 {% block content %}
-    <div style="margin-top: 20px">
+    <div>
         <div class="pull-right">{{ post.time|date('Y-m-d H:i') }}
             {% if is_granted('ROLE_ADMIN') %}<a class="btn btn-default"
                                                 href="{{ path('blog.editPost',{uid: post.id, slug: post.slug}) }}"><span

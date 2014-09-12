@@ -3,7 +3,7 @@
 {% block title %}{% if title is defined %}{{ title }}{% else %}Edit Post{% endif %} | Blog{% endblock %}
 
 {% block content %}
-    <div style="margin-top: 20px">
+    <div>
 
         <div class="well">
             {% if is_granted('ROLE_ADMIN') %}

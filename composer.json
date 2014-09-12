@@ -38,7 +38,8 @@
         "theseer/phpdox": "~0.6",
         "phploc/phploc": "~2.0",
         "squizlabs/php_codesniffer": "*",
-        "ext-pdo_sqlite": "*"
+        "ext-pdo_sqlite": "*",
+        "leafo/lessphp": "~0.4"
     },
     "extra": {
         "branch-alias": {
