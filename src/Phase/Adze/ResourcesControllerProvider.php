@@ -81,7 +81,7 @@ class ResourcesControllerProvider implements ControllerProviderInterface
      */
     public function addPathMapping($prefix, $dirPath)
     {
-        $this->pathMap[$prefix] = $dirPath;
+        $this->pathMap[$prefix] = rtrim($dirPath, DIRECTORY_SEPARATOR);
     }
 
     /**
@@ -92,16 +92,24 @@ class ResourcesControllerProvider implements ControllerProviderInterface
      */
     public function getFileForUri($path)
     {
-        $filePath = null;
+        $file = null;
         foreach ($this->pathMap as $stem => $dir) {
             if (strpos($path, $stem) === 0) {
                 $relativePath = substr($path, strlen($stem));
                 //Ensure no directory traversal
                 $relativePath = preg_replace('/\.{2,}/', '.', $relativePath);
-                $filePath = new File($dir . $relativePath, true);
+                $filePath = $dir . $relativePath;
+                // Make sure that the real path is inside our inclusion directory.
+                // Yes, this means you can't have symlinks; security outranks convenience unless we can find a safe fix
+
+                $fileInDir = strpos($filePath, $dir . DIRECTORY_SEPARATOR) === 0;
+
+                if ($fileInDir) {
+                    $file = new File($filePath, true);
+                }
                 break;
             }
         }
-        return $filePath;
+        return $file;
     }
 }
