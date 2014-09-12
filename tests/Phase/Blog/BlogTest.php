@@ -127,25 +127,25 @@ class BlogTest extends \PHPUnit_Framework_TestCase
             [
                 'subject' => 'Old post',
                 'body' => 'Earlier Fascinating Content',
-                'time' => date('Y-m-d h:i:s', time() - 3600),
+                'time' => date('Y-m-d H:i:s', time() - 3600),
                 'security' => BlogPost::SECURITY_PUBLIC
             ],
             [
                 'subject' => 'Private post',
                 'body' => 'Earlier Fascinating Content',
-                'time' => date('Y-m-d h:i:s', time() - 3000),
+                'time' => date('Y-m-d H:i:s', time() - 3000),
                 'security' => BlogPost::SECURITY_PRIVATE
             ],
             [
                 'subject' => 'Another Private post',
                 'body' => 'Earlier Fascinating Content',
-                'time' => date('Y-m-d h:i:s', time() - 2000),
+                'time' => date('Y-m-d H:i:s', time() - 2000),
                 'security' => BlogPost::SECURITY_PRIVATE
             ],
             [
                 'subject' => 'Future post',
                 'body' => 'Earlier Fascinating Content',
-                'time' => date('Y-m-d h:i:s', time() + 3600),
+                'time' => date('Y-m-d H:i:s', time() + 3600),
                 'security' => BlogPost::SECURITY_PUBLIC
             ]
         ];
