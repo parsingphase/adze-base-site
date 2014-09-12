@@ -1,12 +1,18 @@
-{% extends 'layout.html.twig' %}
+{% extends '@blog/layout-blog.html.twig' %}
 
 {% block title %}{{ post.subject }} | Blog{% endblock %}
 
 {% block content %}
     <div style="margin-top: 20px">
-        <div class="pull-right">{{ post.time|date('Y-m-d H:i') }}</div>
+        <div class="pull-right">{{ post.time|date('Y-m-d H:i') }}
+            {% if is_granted('ROLE_ADMIN') %}<a class="btn btn-default"
+                                                href="{{ path('blog.editPost',{uid: post.id, slug: post.slug}) }}"><span
+                        class="glyphicon glyphicon-pencil"></span> Edit</a> {% endif %}
+        </div>
 
-        <h1>{{ post.subject }}</h1>
+        <h1>{% if not post.public %}<span class="glyphicon glyphicon-eye-close"></span> {% endif -%}
+            {% if not post.inPast %}<span class="glyphicon glyphicon-calendar"></span> {% endif -%}
+            {{ post.subject }}</h1>
 
         <div class="well">
             {{ post.body|raw|nl2br }}
@@ -14,9 +20,9 @@
     </div>
 {% endblock %}
 
-{% block sidebar %}
-    {{ parent() }}
-    <div class="well">
-        <a href="{{ path('blog.index') }}">Back to blog index</a>
-    </div>
-{% endblock %}
+{#{% block sidebar %}#}
+    {#{{ parent() }}#}
+    {#<div class="well">#}
+        {#<a href="{{ path('blog.index') }}">Back to blog index</a>#}
+    {#</div>#}
+{#{% endblock %}#}

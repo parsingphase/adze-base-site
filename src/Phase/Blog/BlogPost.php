@@ -18,6 +18,7 @@ use DateTime;
 class BlogPost
 {
     const SECURITY_PUBLIC = 'public';
+    const SECURITY_PRIVATE = 'private';
 
     /**
      * @var int|null
@@ -132,4 +133,13 @@ class BlogPost
         return (strtolower($slug));
     }
 
+    public function isInPast()
+    {
+        return $this->getTime() <= new DateTime();
+    }
+
+    public function isPublic()
+    {
+        return $this->getSecurity() == self::SECURITY_PUBLIC;
+    }
 }

@@ -1,6 +1,6 @@
-{% extends 'layout.html.twig' %}
+{% extends '@blog/layout-blog.html.twig' %}
 
-{% block title %}New Post | Blog{% endblock %}
+{% block title %}{% if title is defined %}{{ title }}{% else %}Edit Post{% endif %} | Blog{% endblock %}
 
 {% block content %}
     <div style="margin-top: 20px">
@@ -19,6 +19,12 @@
                 </div>
 
                 <div class="form-group">
+                    {{ form_label(form.security) }}
+                    {{ form_errors(form.security) }}
+                    {{ form_widget(form.security, {'attr': {'class': 'form-control' }}) }}
+                </div>
+
+                <div class="form-group">
                     {{ form_row(form.time) }}
                 </div>
 
@@ -31,7 +37,7 @@
                 <div>
                     {{ form_label(form.save) }}
                     {#{{ form_errors(form.save) }}#}
-                    {{ form_widget(form.save, {'attr': {'class': 'btn' }}) }}
+                    {{ form_widget(form.save, {'attr': {'class': 'btn btn-default' }}) }}
                 </div>
                 {{ form_end(form) }}
                 {#<input type="submit" name="submit" class="btn"/>#}

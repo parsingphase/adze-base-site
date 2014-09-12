@@ -37,20 +37,38 @@ class BlogController
 
     public function indexAction()
     {
-        $posts = $this->blog->fetchRecentPosts();
+        $pastOnly = $publicOnly = !$this->app->getSecurityContext()->isGranted('ROLE_ADMIN');
+        $posts = $this->blog->fetchRecentPosts(5, $publicOnly, $pastOnly);
         return $this->app->render('@blog/index.html.twig', ['posts' => $posts]);
     }
 
     public function singlePostAction($uid, $slug)
     {
-        //TODO check slug
         $post = $this->blog->fetchPostById($uid);
+
+        if (!(
+            (($post->getSecurity() == BlogPost::SECURITY_PUBLIC) && $post->getTime() < new \DateTime())
+            || $this->app->getSecurityContext()->isGranted('ROLE_ADMIN'))
+        ) {
+            throw new AccessDeniedHttpException; // FIXME just 404?
+        }
+
+        if ($slug !== $post->getSlug()) {
+            return $this->app->redirect(
+                $this->app->path(
+                    'blog.post',
+                    ['uid' => $uid, 'slug' => $post->getSlug()]
+                )
+            );
+        }
         return $this->app->render('@blog/post.html.twig', ['post' => $post]);
     }
 
     public function archiveAction()
     {
-        $posts = $this->blog->fetchAllPostsNoBody();
+        $pastOnly = $publicOnly = !$this->app->getSecurityContext()->isGranted('ROLE_ADMIN');
+
+        $posts = $this->blog->fetchAllPostsNoBody($publicOnly, $pastOnly);
         return $this->app->render('@blog/archive.html.twig', ['posts' => $posts]);
     }
 
@@ -132,6 +150,11 @@ class BlogController
             ->add('body', 'textarea')
             ->add('time', 'datetime')
             ->add('save', 'submit')
+            ->add(
+                'security',
+                'choice',
+                ['choices' => [BlogPost::SECURITY_PUBLIC => 'Public', BlogPost::SECURITY_PRIVATE => 'Private']]
+            )
             ->setAction($action);
         /* @var FormBuilder $formBuilder Interface definition means PhpStorm chokes there */
 

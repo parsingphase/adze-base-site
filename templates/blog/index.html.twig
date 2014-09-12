@@ -1,4 +1,4 @@
-{% extends 'layout.html.twig' %}
+{% extends '@blog/layout-blog.html.twig' %}
 
 {% block title %}Blog{% endblock %}
 
@@ -10,6 +10,8 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <div class="pull-right">{{ post.time|date('Y-m-d H:i') }}</div>
+                        {% if not post.public %}<span class="glyphicon glyphicon-eye-close"></span>{% endif %}
+                        {% if not post.inPast %}<span class="glyphicon glyphicon-calendar"></span>{% endif %}
                         {{ post.subject }}
                     </div>
                     <div class="panel-body">

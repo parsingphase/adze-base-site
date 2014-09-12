@@ -53,7 +53,7 @@ class Blog
                 ['id' => $blogPost->getId()]
             );
 
-            $return=(bool)$updateCount;
+            $return = (bool)$updateCount;
         } else {
             if (!$blogPost->getTime()) {
                 $blogPost->setTime(new \DateTime());
@@ -100,17 +100,40 @@ class Blog
 
     /**
      * @param int $count
-     * @return BlogPost[]
+     * @param bool $publicOnly
+     * @param bool $pastOnly
      * @throws \InvalidArgumentException
+     * @return BlogPost[]
      */
-    public function fetchRecentPosts($count = 5)
+    public function fetchRecentPosts($count = 5, $publicOnly = false, $pastOnly = false)
     {
         $posts = [];
         if (!is_int($count)) {
             throw new \InvalidArgumentException();
         }
-        $sql = 'SELECT * FROM blog_post ORDER BY `time` DESC LIMIT ' . $count;
-        $rows = $this->dbConnection->fetchAll($sql);
+
+        $whereParts = [];
+        $queryParams = [];
+
+        if ($publicOnly) {
+            $whereParts[] = " security= :security ";
+            $queryParams['security'] = BlogPost::SECURITY_PUBLIC;
+        }
+
+        if ($pastOnly) {
+            $now = new \DateTime();
+            $whereParts[] = " `time` <= :when "; // no "NOW()" in sqlite?
+            $queryParams['when'] = $now->format('Y-m-d H:i');
+        }
+
+        if ($whereParts) {
+            $whereClause = ' WHERE ' . join(' AND ', $whereParts);
+        } else {
+            $whereClause = '';
+        }
+
+        $sql = 'SELECT * FROM blog_post ' . $whereClause . ' ORDER BY `time` DESC LIMIT ' . $count;
+        $rows = $this->dbConnection->fetchAll($sql, $queryParams);
         foreach ($rows as $row) {
             $posts[] = $this->createPostFromDbRow($row);
         }
@@ -119,15 +142,37 @@ class Blog
 
 
     /**
+     * @param bool $publicOnly
+     * @param bool $pastOnly
      * @return BlogPost[]
-     * @throws \InvalidArgumentException
      */
-    public function fetchAllPostsNoBody()
+    public function fetchAllPostsNoBody($publicOnly = false, $pastOnly = false)
     {
+
+        $whereParts = [];
+        $queryParams = [];
+
+        if ($publicOnly) {
+            $whereParts[] = " security= :security ";
+            $queryParams['security'] = BlogPost::SECURITY_PUBLIC;
+        }
+
+        if ($pastOnly) {
+            $now = new \DateTime();
+            $whereParts[] = " `time` <= :when "; // no "NOW()" in sqlite?
+            $queryParams['when'] = $now->format('Y-m-d H:i');
+        }
+
+        if ($whereParts) {
+            $whereClause = ' WHERE ' . join(' AND ', $whereParts);
+        } else {
+            $whereClause = '';
+        }
+
         $posts = [];
 
-        $sql = 'SELECT id,`time`,subject,security, null as body FROM blog_post ORDER BY `time` DESC';
-        $rows = $this->dbConnection->fetchAll($sql);
+        $sql = 'SELECT id,`time`,subject,security, null as body FROM blog_post ' . $whereClause . ' ORDER BY `time` DESC';
+        $rows = $this->dbConnection->fetchAll($sql, $queryParams);
         foreach ($rows as $row) {
             $posts[] = $this->createPostFromDbRow($row);
         }
