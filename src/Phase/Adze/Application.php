@@ -15,7 +15,6 @@ use Phase\Adze\User\UserServiceProvider;
 use Psr\Log\LoggerInterface;
 use Silex\Application as SilexApplication;
 use Silex\ControllerCollection;
-use Silex\ControllerProviderInterface;
 use Silex\Provider\DoctrineServiceProvider;
 use Silex\Provider\FormServiceProvider;
 use Silex\Provider\MonologServiceProvider;
@@ -29,6 +28,8 @@ use Silex\Provider\UrlGeneratorServiceProvider;
 use Silex\Provider\ValidatorServiceProvider;
 use Symfony\Component\Form\FormFactory;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Session\Session;
+use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\Security\Core\SecurityContext;
 
 /**
@@ -288,7 +289,20 @@ class Application extends SilexApplication
         return $this['monolog'];
     }
 
+    /**
+     * @return Session
+     */
+    public function getSession()
+    {
+        return $this['session'];
+    }
 
+
+    /**
+     * Convenience method to show *something* at '/'
+     *
+     * Users may remove the index.php call to this fairly early in their site setup
+     */
     public function setUpDefaultHomepage()
     {
         $app = $this;
@@ -299,13 +313,32 @@ class Application extends SilexApplication
                     'user' => $app->user() ? (string)$app->user()->getName() : null,
                     'time' => new \DateTime(),
                     'error' => $app['security.last_error']($request),
-                    'last_username' => $app['session']->get('_security.last_username'),
+                    'last_username' => $app->getSession()->get('_security.last_username'),
                 ];
 
                 return $app->render(
                     'homepage.html.twig',
                     $viewData
                 );
+            }
+        );
+    }
+
+    /**
+     * If you want '/' to map to a mounted controller, use this to set it up
+     *
+     * @param string $url Relative URL to map to, eg /blog. Must have a valid route.
+     */
+    public function setDefaultRouteByUrl($url)
+    {
+        $app = $this;
+        $app->get(
+            '/',
+            function () use ($app, $url) {
+                // redirect to /hello
+                $subRequest = Request::create($url, 'GET');
+
+                return $app->handle($subRequest, HttpKernelInterface::SUB_REQUEST);
             }
         );
     }

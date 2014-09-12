@@ -24,6 +24,7 @@ $resourceController->addPathMapping('components', dirname(__DIR__) . '/component
 
 //TODO remove this default route and set your own
 $app->setUpDefaultHomepage();
+//eg $app->setDefaultRouteByUrl('/blog');
 
 //Note: template setup below will be cleaned up as code is refactored
 $app->mount('/blog', new BlogControllerProvider());
