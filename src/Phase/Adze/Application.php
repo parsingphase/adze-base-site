@@ -11,6 +11,7 @@ namespace Phase\Adze;
 
 use Doctrine\DBAL\Connection;
 use Phase\Adze\Exception\UnpromotedApplicationException;
+use Phase\Adze\User\UserServiceProvider;
 use Psr\Log\LoggerInterface;
 use Silex\Application as SilexApplication;
 use Silex\ControllerCollection;
@@ -26,7 +27,6 @@ use Silex\Provider\TranslationServiceProvider;
 use Silex\Provider\TwigServiceProvider;
 use Silex\Provider\UrlGeneratorServiceProvider;
 use Silex\Provider\ValidatorServiceProvider;
-use SimpleUser\UserServiceProvider;
 use Symfony\Component\Form\FormFactory;
 use Symfony\Component\Security\Core\SecurityContext;
 
