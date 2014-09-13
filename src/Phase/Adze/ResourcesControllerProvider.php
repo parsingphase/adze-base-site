@@ -77,20 +77,26 @@ class ResourcesControllerProvider implements ControllerProviderInterface
     }
 
     /**
-     * Add a directory to allow its files to be accessed through the ResourcesController via a given prefix
+     * Add a directory to allow its files to be accessed through the ResourcesController via a given prefix.
+     * Path must exist and will be normalised
      *
      * @param string $prefix Prefix that will be matched in any URL calls to the ResourcesController
      * @param string $dirPath Absolute directory path to be mapped under this prefix
+     * @return string|false Normalised path or false if path doesn't exist
      */
     public function addPathMapping($prefix, $dirPath)
     {
-        $this->pathMap[$prefix] = rtrim($dirPath, DIRECTORY_SEPARATOR);
+        $cleanPath = rtrim(realpath($dirPath), DIRECTORY_SEPARATOR);
+        if ($cleanPath) {
+            $this->pathMap[$prefix] = $cleanPath;
+        }
+        return $cleanPath;
     }
 
     /**
-     * Given a URL relative to the controller root, return the file that matches it
+     * Given a URL relative to the controller root, return the file that matches it. Refuses symlinks.
      *
-     * @param $path
+     * @param string $path URL part after controller mount point
      * @return null|File
      */
     public function getFileForUri($path)

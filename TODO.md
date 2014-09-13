@@ -16,6 +16,7 @@
  - ✓ Refactor user management to expose only required functionality
  - Refactor Adze, Blog to own composer modules
  - Use / re-enable flashbag for messaging
+ - Add author names to blog posts
  - Refactor Blog Post icons to twig macro
  - Sort out route-based security
  - Use blog-specific security tokens
