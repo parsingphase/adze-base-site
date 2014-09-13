@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d95cd5c8a41959e96b66ea2b51406870",
+    "hash": "ce1d657a2ac682f825234b52948a8708",
     "packages": [
         {
             "name": "components/bootstrap",
@@ -903,6 +903,140 @@
                 "psr-3"
             ],
             "time": "2014-06-04 16:30:04"
+        },
+        {
+            "name": "parsingphase/adze",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/parsingphase/adze.git",
+                "reference": "18634a096ec5625e5e03ff84d26d7ba55b4c4be9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/parsingphase/adze/zipball/18634a096ec5625e5e03ff84d26d7ba55b4c4be9",
+                "reference": "18634a096ec5625e5e03ff84d26d7ba55b4c4be9",
+                "shasum": ""
+            },
+            "require": {
+                "components/bootstrap": "~3.2",
+                "components/handlebars.js": "~2.0",
+                "components/jqueryui": "~1.11",
+                "doctrine/dbal": "~2.4",
+                "ext-intl": "*",
+                "jasongrimes/silex-simpleuser": "~1.0",
+                "monolog/monolog": "~1.10",
+                "php": "~5.5.9",
+                "silex/silex": "~1.2",
+                "symfony/config": "~2.5",
+                "symfony/form": "~2.5",
+                "symfony/security": "~2.5",
+                "symfony/translation": "~2.5",
+                "symfony/twig-bridge": "~2.5",
+                "symfony/validator": "~2.5",
+                "twig/twig": "~1.16"
+            },
+            "require-dev": {
+                "ext-pdo_sqlite": "*",
+                "leafo/lessphp": "~0.4",
+                "phploc/phploc": "~2.0",
+                "phpunit/phpunit": "~4.2",
+                "squizlabs/php_codesniffer": "*",
+                "theseer/phpdox": "~0.6"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Phase\\Adze\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Richard George",
+                    "email": "richard@phase.org"
+                }
+            ],
+            "description": "Silex-based web framework",
+            "support": {
+                "source": "https://github.com/parsingphase/adze/tree/master",
+                "issues": "https://github.com/parsingphase/adze/issues"
+            },
+            "time": "2014-09-13 13:44:48"
+        },
+        {
+            "name": "parsingphase/blog",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/parsingphase/blog.git",
+                "reference": "f2e0c9dbb9c4a6ae374f37c85c39f167a119107c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/parsingphase/blog/zipball/f2e0c9dbb9c4a6ae374f37c85c39f167a119107c",
+                "reference": "f2e0c9dbb9c4a6ae374f37c85c39f167a119107c",
+                "shasum": ""
+            },
+            "require": {
+                "components/bootstrap": "~3.2",
+                "components/handlebars.js": "~2.0",
+                "components/jqueryui": "~1.11",
+                "doctrine/dbal": "~2.4",
+                "ext-intl": "*",
+                "jasongrimes/silex-simpleuser": "~1.0",
+                "monolog/monolog": "~1.10",
+                "php": "~5.5.9",
+                "silex/silex": "~1.2",
+                "symfony/config": "~2.5",
+                "symfony/form": "~2.5",
+                "symfony/security": "~2.5",
+                "symfony/translation": "~2.5",
+                "symfony/twig-bridge": "~2.5",
+                "symfony/validator": "~2.5",
+                "twig/twig": "~1.16"
+            },
+            "require-dev": {
+                "ext-pdo_sqlite": "*",
+                "leafo/lessphp": "~0.4",
+                "phploc/phploc": "~2.0",
+                "phpunit/phpunit": "~4.2",
+                "squizlabs/php_codesniffer": "*",
+                "theseer/phpdox": "~0.6"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Phase\\Blog\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Richard George",
+                    "email": "richard@phase.org"
+                }
+            ],
+            "description": "Blog module for Adze applications",
+            "support": {
+                "source": "https://github.com/parsingphase/blog/tree/master",
+                "issues": "https://github.com/parsingphase/blog/issues"
+            },
+            "time": "2014-09-13 13:45:10"
         },
         {
             "name": "pimple/pimple",
@@ -3705,9 +3839,10 @@
 
     ],
     "minimum-stability": "stable",
-    "stability-flags": [
-
-    ],
+    "stability-flags": {
+        "parsingphase/adze": 20,
+        "parsingphase/blog": 20
+    },
     "prefer-stable": false,
     "platform": {
         "php": "~5.5.9",

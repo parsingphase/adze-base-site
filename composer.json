@@ -1,5 +1,5 @@
 {
-    "name": "parsingphase/phaseorg",
+    "name": "parsingphase/adze-base-site",
     "description": "Base project package for phase.org",
     "type": "project",
     "license": "MIT",
@@ -9,13 +9,20 @@
             "email": "richard@phase.org"
         }
     ],
-    "autoload": {
-        "psr-0": {
-            "Phase\\": "src/"
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/parsingphase/adze.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/parsingphase/blog.git"
         }
-    },
+    ],
     "minimum-stability": "stable",
     "require": {
+        "parsingphase/adze":"dev-master",
+        "parsingphase/blog":"dev-master",
         "php": "~5.5.9",
         "silex/silex": "~1.2",
         "components/bootstrap": "~3.2",
