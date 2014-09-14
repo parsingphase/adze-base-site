@@ -1,6 +1,6 @@
 {
     "name": "parsingphase/adze-base-site",
-    "description": "Base project package for phase.org",
+    "description": "Example deployment wrapper for sites built on parsingphase/adze",
     "type": "project",
     "license": "MIT",
     "authors": [
@@ -24,21 +24,9 @@
         "parsingphase/adze":"dev-master",
         "parsingphase/blog":"dev-master",
         "php": "~5.5.9",
-        "silex/silex": "~1.2",
         "components/bootstrap": "~3.2",
         "components/jqueryui": "~1.11",
-        "components/handlebars.js": "~2.0",
-        "twig/twig": "~1.16",
-        "doctrine/dbal": "~2.4",
-        "symfony/twig-bridge": "~2.5",
-        "symfony/form": "~2.5",
-        "symfony/security": "~2.5",
-        "symfony/validator": "~2.5",
-        "symfony/config": "~2.5",
-        "symfony/translation": "~2.5",
-        "monolog/monolog": "~1.10",
-        "ext-intl": "*",
-        "jasongrimes/silex-simpleuser": "~1.0"
+        "components/handlebars.js": "~2.0"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.2",
