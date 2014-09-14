@@ -17,6 +17,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 $app = new Application();
 $app->loadConfig(require dirname(__DIR__) . '/config/config.php');
 $app->setupCoreProviders();
+$app->addDefaultTemplatePath();
 
 $resourceController = $app->getResourceController();
 // Make the components folder accessible through the ResourceController at /resources
@@ -28,10 +29,6 @@ $app->setUpDefaultHomepage();
 
 //Note: template setup below will be cleaned up as code is refactored
 $app->mount('/blog', new BlogControllerProvider());
-$app->getTwigFilesystemLoader()->addPath(dirname(__DIR__) . '/templates/blog', 'blog');
-
-// Set site own template path (last in list; everything else gets a chance to get there first);
-$app->getTwigFilesystemLoader()->addPath(dirname(__DIR__) . '/templates/unconfigured-site');
 
 $app->setUpErrorHandling();
 
