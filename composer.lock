@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ce1d657a2ac682f825234b52948a8708",
+    "hash": "8a2cbd21032042c098016936fa16a12d",
     "packages": [
         {
             "name": "components/bootstrap",
@@ -910,12 +910,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/parsingphase/adze.git",
-                "reference": "18634a096ec5625e5e03ff84d26d7ba55b4c4be9"
+                "reference": "b49b43da928dc5aa9b958f3bf1a44d14e0b751f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/parsingphase/adze/zipball/18634a096ec5625e5e03ff84d26d7ba55b4c4be9",
-                "reference": "18634a096ec5625e5e03ff84d26d7ba55b4c4be9",
+                "url": "https://api.github.com/repos/parsingphase/adze/zipball/b49b43da928dc5aa9b958f3bf1a44d14e0b751f3",
+                "reference": "b49b43da928dc5aa9b958f3bf1a44d14e0b751f3",
                 "shasum": ""
             },
             "require": {
@@ -969,7 +969,7 @@
                 "source": "https://github.com/parsingphase/adze/tree/master",
                 "issues": "https://github.com/parsingphase/adze/issues"
             },
-            "time": "2014-09-13 13:44:48"
+            "time": "2014-09-14 13:59:26"
         },
         {
             "name": "parsingphase/blog",
@@ -977,31 +977,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/parsingphase/blog.git",
-                "reference": "f2e0c9dbb9c4a6ae374f37c85c39f167a119107c"
+                "reference": "c02638f64dfbde4ba120258fdacf6ccc3d522f8b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/parsingphase/blog/zipball/f2e0c9dbb9c4a6ae374f37c85c39f167a119107c",
-                "reference": "f2e0c9dbb9c4a6ae374f37c85c39f167a119107c",
+                "url": "https://api.github.com/repos/parsingphase/blog/zipball/c02638f64dfbde4ba120258fdacf6ccc3d522f8b",
+                "reference": "c02638f64dfbde4ba120258fdacf6ccc3d522f8b",
                 "shasum": ""
             },
             "require": {
-                "components/bootstrap": "~3.2",
-                "components/handlebars.js": "~2.0",
-                "components/jqueryui": "~1.11",
                 "doctrine/dbal": "~2.4",
-                "ext-intl": "*",
-                "jasongrimes/silex-simpleuser": "~1.0",
-                "monolog/monolog": "~1.10",
-                "php": "~5.5.9",
-                "silex/silex": "~1.2",
-                "symfony/config": "~2.5",
-                "symfony/form": "~2.5",
-                "symfony/security": "~2.5",
-                "symfony/translation": "~2.5",
-                "symfony/twig-bridge": "~2.5",
-                "symfony/validator": "~2.5",
-                "twig/twig": "~1.16"
+                "parsingphase/adze": "dev-master",
+                "php": "~5.5.9"
             },
             "require-dev": {
                 "ext-pdo_sqlite": "*",
@@ -1036,7 +1023,7 @@
                 "source": "https://github.com/parsingphase/blog/tree/master",
                 "issues": "https://github.com/parsingphase/blog/issues"
             },
-            "time": "2014-09-13 13:45:10"
+            "time": "2014-09-14 14:00:06"
         },
         {
             "name": "pimple/pimple",
@@ -2370,32 +2357,32 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v0.9.5",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "ef70767475434bdb3615b43c327e2cae17ef12eb"
+                "reference": "2b96ab8edccd5a0d0e7a826a7dc53c421ae64f94"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/ef70767475434bdb3615b43c327e2cae17ef12eb",
-                "reference": "ef70767475434bdb3615b43c327e2cae17ef12eb",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/2b96ab8edccd5a0d0e7a826a7dc53c421ae64f94",
+                "reference": "2b96ab8edccd5a0d0e7a826a7dc53c421ae64f94",
                 "shasum": ""
             },
             "require": {
                 "ext-tokenizer": "*",
-                "php": ">=5.2"
+                "php": ">=5.3"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.9-dev"
+                    "dev-master": "1.0-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "PHPParser": "lib/"
-                }
+                "files": [
+                    "lib/bootstrap.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -2411,7 +2398,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2014-07-23 18:24:17"
+            "time": "2014-09-12 12:48:23"
         },
         {
             "name": "ocramius/instantiator",
@@ -2825,16 +2812,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.2.5",
+            "version": "4.2.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "c3abe5953d1e60a0bf23012b1bc8c4d07f4832d7"
+                "reference": "c28a790620fe30b049bb693be1ef9cd4e0fe906c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c3abe5953d1e60a0bf23012b1bc8c4d07f4832d7",
-                "reference": "c3abe5953d1e60a0bf23012b1bc8c4d07f4832d7",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c28a790620fe30b049bb693be1ef9cd4e0fe906c",
+                "reference": "c28a790620fe30b049bb693be1ef9cd4e0fe906c",
                 "shasum": ""
             },
             "require": {
@@ -2895,7 +2882,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2014-09-06 18:38:27"
+            "time": "2014-09-14 09:31:24"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -3573,16 +3560,16 @@
         },
         {
             "name": "theseer/fdomdocument",
-            "version": "1.5.0",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/theseer/fDOMDocument.git",
-                "reference": "137aa3b13bef05b4e301899cbabdaf7d501847d2"
+                "reference": "d08cf070350f884c63fc9078d27893c2ab6c7cef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/theseer/fDOMDocument/zipball/137aa3b13bef05b4e301899cbabdaf7d501847d2",
-                "reference": "137aa3b13bef05b4e301899cbabdaf7d501847d2",
+                "url": "https://api.github.com/repos/theseer/fDOMDocument/zipball/d08cf070350f884c63fc9078d27893c2ab6c7cef",
+                "reference": "d08cf070350f884c63fc9078d27893c2ab6c7cef",
                 "shasum": ""
             },
             "require": {
@@ -3604,12 +3591,12 @@
                 {
                     "name": "Arne Blankerts",
                     "email": "arne@blankerts.de",
-                    "role": "Developer"
+                    "role": "lead"
                 }
             ],
             "description": "The classes contained within this repository extend the standard DOM to use exceptions at all occasions of errors instead of PHP warnings or notices. They also add various custom methods and shortcuts for convenience and to simplify the usage of DOM.",
             "homepage": "https://github.com/theseer/fDOMDocument",
-            "time": "2014-02-19 00:20:43"
+            "time": "2014-09-13 10:57:19"
         },
         {
             "name": "theseer/fxsl",
@@ -3658,16 +3645,16 @@
         },
         {
             "name": "theseer/phpdox",
-            "version": "0.6.5",
+            "version": "0.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/theseer/phpdox.git",
-                "reference": "9eb563bd2993f98631218fd821d120adce389462"
+                "reference": "18ca0c645c5980d08edf44f701b2108f241b0425"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/theseer/phpdox/zipball/9eb563bd2993f98631218fd821d120adce389462",
-                "reference": "9eb563bd2993f98631218fd821d120adce389462",
+                "url": "https://api.github.com/repos/theseer/phpdox/zipball/18ca0c645c5980d08edf44f701b2108f241b0425",
+                "reference": "18ca0c645c5980d08edf44f701b2108f241b0425",
                 "shasum": ""
             },
             "require": {
@@ -3677,14 +3664,12 @@
                 "ext-mbstring": "*",
                 "ext-tokenizer": "*",
                 "ext-xsl": "*",
-                "nikic/php-parser": ">=0.9.4",
+                "nikic/php-parser": ">=1.0.0",
                 "php": ">=5.3.3",
                 "phpunit/php-timer": ">=1.0.4",
-                "theseer/directoryscanner": ">=1.2.1",
-                "theseer/fdomdocument": ">=1.4.1",
-                "theseer/fxsl": ">=1.1",
-                "zetacomponents/base": ">=1.8.0",
-                "zetacomponents/console-tools": ">=1.6.0"
+                "theseer/directoryscanner": ">=1.3.0",
+                "theseer/fdomdocument": ">=1.5.0",
+                "theseer/fxsl": ">=1.1"
             },
             "bin": [
                 "composer/bin/phpdox"
@@ -3712,127 +3697,7 @@
                 }
             ],
             "description": "A fast Documentation generator for PHP Code using standard technology (SRC, DOCBLOCK, XML and XSLT) with event based processing",
-            "time": "2014-02-17 22:33:34"
-        },
-        {
-            "name": "zetacomponents/base",
-            "version": "1.8",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/zetacomponents/Base.git",
-                "reference": "52ca69c1de55f3fa4f595779e5bc831da7ee176c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/zetacomponents/Base/zipball/52ca69c1de55f3fa4f595779e5bc831da7ee176c",
-                "reference": "52ca69c1de55f3fa4f595779e5bc831da7ee176c",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "src"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "apache2"
-            ],
-            "authors": [
-                {
-                    "name": "Sergey Alexeev"
-                },
-                {
-                    "name": "Sebastian Bergmann"
-                },
-                {
-                    "name": "Jan Borsodi"
-                },
-                {
-                    "name": "Raymond Bosman"
-                },
-                {
-                    "name": "Frederik Holljen"
-                },
-                {
-                    "name": "Kore Nordmann"
-                },
-                {
-                    "name": "Derick Rethans"
-                },
-                {
-                    "name": "Vadym Savchuk"
-                },
-                {
-                    "name": "Tobias Schlitt"
-                },
-                {
-                    "name": "Alexandru Stanoi"
-                }
-            ],
-            "description": "The Base package provides the basic infrastructure that all packages rely on. Therefore every component relies on this package.",
-            "homepage": "https://github.com/zetacomponents",
-            "time": "2009-12-21 12:14:16"
-        },
-        {
-            "name": "zetacomponents/console-tools",
-            "version": "1.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/zetacomponents/ConsoleTools.git",
-                "reference": "e0a0def574009f7cfdf79bf0838a810bcf643775"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/zetacomponents/ConsoleTools/zipball/e0a0def574009f7cfdf79bf0838a810bcf643775",
-                "reference": "e0a0def574009f7cfdf79bf0838a810bcf643775",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "src"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "apache2"
-            ],
-            "authors": [
-                {
-                    "name": "Sergey Alexeev"
-                },
-                {
-                    "name": "Sebastian Bergmann"
-                },
-                {
-                    "name": "Jan Borsodi"
-                },
-                {
-                    "name": "Raymond Bosman"
-                },
-                {
-                    "name": "Frederik Holljen"
-                },
-                {
-                    "name": "Kore Nordmann"
-                },
-                {
-                    "name": "Derick Rethans"
-                },
-                {
-                    "name": "Vadym Savchuk"
-                },
-                {
-                    "name": "Tobias Schlitt"
-                },
-                {
-                    "name": "Alexandru Stanoi"
-                }
-            ],
-            "description": "A set of classes to do different actions with the console (also called shell). It can render a progress bar, tables and a status bar and contains a class for parsing command line options.",
-            "homepage": "https://github.com/zetacomponents",
-            "time": "2009-12-21 12:19:33"
+            "time": "2014-09-11 09:37:32"
         }
     ],
     "aliases": [
@@ -3845,8 +3710,7 @@
     },
     "prefer-stable": false,
     "platform": {
-        "php": "~5.5.9",
-        "ext-intl": "*"
+        "php": "~5.5.9"
     },
     "platform-dev": {
         "ext-pdo_sqlite": "*"
