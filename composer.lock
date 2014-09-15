@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8a2cbd21032042c098016936fa16a12d",
+    "hash": "57440218f1e4766902c4c1ac8a66b861",
     "packages": [
         {
             "name": "components/bootstrap",
@@ -910,12 +910,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/parsingphase/adze.git",
-                "reference": "b49b43da928dc5aa9b958f3bf1a44d14e0b751f3"
+                "reference": "9f68fd410990e2d9c20e2618a080638c84ca83b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/parsingphase/adze/zipball/b49b43da928dc5aa9b958f3bf1a44d14e0b751f3",
-                "reference": "b49b43da928dc5aa9b958f3bf1a44d14e0b751f3",
+                "url": "https://api.github.com/repos/parsingphase/adze/zipball/9f68fd410990e2d9c20e2618a080638c84ca83b4",
+                "reference": "9f68fd410990e2d9c20e2618a080638c84ca83b4",
                 "shasum": ""
             },
             "require": {
@@ -969,7 +969,7 @@
                 "source": "https://github.com/parsingphase/adze/tree/master",
                 "issues": "https://github.com/parsingphase/adze/issues"
             },
-            "time": "2014-09-14 13:59:26"
+            "time": "2014-09-15 11:24:40"
         },
         {
             "name": "parsingphase/blog",
@@ -977,12 +977,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/parsingphase/blog.git",
-                "reference": "c02638f64dfbde4ba120258fdacf6ccc3d522f8b"
+                "reference": "5b007b8c876e6c63ba5e4df6635b415cb235e943"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/parsingphase/blog/zipball/c02638f64dfbde4ba120258fdacf6ccc3d522f8b",
-                "reference": "c02638f64dfbde4ba120258fdacf6ccc3d522f8b",
+                "url": "https://api.github.com/repos/parsingphase/blog/zipball/5b007b8c876e6c63ba5e4df6635b415cb235e943",
+                "reference": "5b007b8c876e6c63ba5e4df6635b415cb235e943",
                 "shasum": ""
             },
             "require": {
@@ -1023,7 +1023,49 @@
                 "source": "https://github.com/parsingphase/blog/tree/master",
                 "issues": "https://github.com/parsingphase/blog/issues"
             },
-            "time": "2014-09-14 14:00:06"
+            "time": "2014-09-15 11:23:44"
+        },
+        {
+            "name": "parsingphase/phaseorg-styling",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "git@bitbucket.org:parsingphase/phaseorg-styling.git",
+                "reference": "ea42108c05b61f97d276fab293bba7ef2e4e856e"
+            },
+            "require": {
+                "parsingphase/adze": "dev-master",
+                "php": "~5.5.9"
+            },
+            "require-dev": {
+                "leafo/lessphp": "~0.4",
+                "phploc/phploc": "~2.0",
+                "phpunit/phpunit": "~4.2",
+                "squizlabs/php_codesniffer": "*",
+                "theseer/phpdox": "~0.6"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Phase\\PhaseOrg\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Richard George",
+                    "email": "richard@phase.org"
+                }
+            ],
+            "description": "Resources for phase.org",
+            "time": "2014-09-15 11:40:24"
         },
         {
             "name": "pimple/pimple",
@@ -3706,7 +3748,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "parsingphase/adze": 20,
-        "parsingphase/blog": 20
+        "parsingphase/blog": 20,
+        "parsingphase/phaseorg-styling": 20
     },
     "prefer-stable": false,
     "platform": {

@@ -17,12 +17,17 @@
         {
             "type": "vcs",
             "url": "https://github.com/parsingphase/blog.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@bitbucket.org:parsingphase/phaseorg-styling.git"
         }
     ],
     "minimum-stability": "stable",
     "require": {
         "parsingphase/adze":"dev-master",
         "parsingphase/blog":"dev-master",
+        "parsingphase/phaseorg-styling":"dev-master",
         "php": "~5.5.9",
         "components/bootstrap": "~3.2",
         "components/jqueryui": "~1.11",

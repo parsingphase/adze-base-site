@@ -2,6 +2,5 @@ build
 components
 config
 vendor
-web
 .idea
 tests/resources/*.tmp
