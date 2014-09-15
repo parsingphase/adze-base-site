@@ -16,7 +16,8 @@
  - ✓ Refactor Adze, Blog to own composer modules
  - ✓ Add author names to blog posts
  - ✓ Refactor Blog Post icons to twig macro
- - Recreate phase.org template in bootstrap 3
+ - ✓ Recreate phase.org template in bootstrap 3
+ - Fix timezones on blog posts
  - Update schema-creation scripts to handle schema files in modules
  - Use / re-enable flashbag for messaging
  - Sort out route-based security
