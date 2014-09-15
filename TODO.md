@@ -12,12 +12,13 @@
  - ✓ Allow selection of blog post security
  - ✓ Implement proper logging & error handling
  - ✓ Use proper blog CSS file
- - Recreate phase.org template in bootstrap 3
  - ✓ Refactor user management to expose only required functionality
  - ✓ Refactor Adze, Blog to own composer modules
+ - ✓ Add author names to blog posts
+ - ✓ Refactor Blog Post icons to twig macro
+ - Recreate phase.org template in bootstrap 3
+ - Update schema-creation scripts to handle schema files in modules
  - Use / re-enable flashbag for messaging
- - Add author names to blog posts
- - Refactor Blog Post icons to twig macro
  - Sort out route-based security
  - Use blog-specific security tokens
  - Resync index.php
