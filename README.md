@@ -1,4 +1,4 @@
-# parsingphase/adze-base-site #
+# parsingphase/adze-base-site [![Build Status](https://travis-ci.org/parsingphase/adze-base-site.svg?branch=master)](https://travis-ci.org/parsingphase/adze-base-site)
 
 Deployment wrapper for sites based on the [parsingphase/adze](https://github.com/parsingphase/adze) framework
 
