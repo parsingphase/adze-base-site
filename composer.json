@@ -23,7 +23,6 @@
     "require": {
         "parsingphase/adze":"dev-master",
         "parsingphase/blog":"dev-master",
-        "parsingphase/phaseorg-styling":"dev-master",
         "php": "~5.5",
         "components/bootstrap": "~3.2",
         "components/jqueryui": "~1.11",
@@ -33,7 +32,7 @@
         "phpunit/phpunit": "~4.2",
         "theseer/phpdox": "~0.6",
         "phploc/phploc": "~2.0",
-        "squizlabs/php_codesniffer": "*",
+        "squizlabs/php_codesniffer": "~1.5",
         "ext-pdo_sqlite": "*",
         "leafo/lessphp": "~0.4"
     },

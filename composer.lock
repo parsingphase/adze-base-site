@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8a2cbd21032042c098016936fa16a12d",
+    "hash": "909ef77fe413056c2944c097e98ff835",
     "packages": [
         {
             "name": "components/bootstrap",
@@ -910,12 +910,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/parsingphase/adze.git",
-                "reference": "b49b43da928dc5aa9b958f3bf1a44d14e0b751f3"
+                "reference": "216142b7c57406e05c01d3f4534405142e7ded60"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/parsingphase/adze/zipball/b49b43da928dc5aa9b958f3bf1a44d14e0b751f3",
-                "reference": "b49b43da928dc5aa9b958f3bf1a44d14e0b751f3",
+                "url": "https://api.github.com/repos/parsingphase/adze/zipball/216142b7c57406e05c01d3f4534405142e7ded60",
+                "reference": "216142b7c57406e05c01d3f4534405142e7ded60",
                 "shasum": ""
             },
             "require": {
@@ -926,7 +926,7 @@
                 "ext-intl": "*",
                 "jasongrimes/silex-simpleuser": "~1.0",
                 "monolog/monolog": "~1.10",
-                "php": "~5.5.9",
+                "php": "~5.5",
                 "silex/silex": "~1.2",
                 "symfony/config": "~2.5",
                 "symfony/form": "~2.5",
@@ -969,7 +969,7 @@
                 "source": "https://github.com/parsingphase/adze/tree/master",
                 "issues": "https://github.com/parsingphase/adze/issues"
             },
-            "time": "2014-09-14 13:59:26"
+            "time": "2014-09-16 15:26:36"
         },
         {
             "name": "parsingphase/blog",
@@ -977,12 +977,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/parsingphase/blog.git",
-                "reference": "c02638f64dfbde4ba120258fdacf6ccc3d522f8b"
+                "reference": "7bdfe5cbdf31097271e2a3c8653a6e89d53792d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/parsingphase/blog/zipball/c02638f64dfbde4ba120258fdacf6ccc3d522f8b",
-                "reference": "c02638f64dfbde4ba120258fdacf6ccc3d522f8b",
+                "url": "https://api.github.com/repos/parsingphase/blog/zipball/7bdfe5cbdf31097271e2a3c8653a6e89d53792d1",
+                "reference": "7bdfe5cbdf31097271e2a3c8653a6e89d53792d1",
                 "shasum": ""
             },
             "require": {
@@ -1023,7 +1023,7 @@
                 "source": "https://github.com/parsingphase/blog/tree/master",
                 "issues": "https://github.com/parsingphase/blog/issues"
             },
-            "time": "2014-09-14 14:00:06"
+            "time": "2014-09-16 14:53:53"
         },
         {
             "name": "pimple/pimple",
@@ -3710,7 +3710,7 @@
     },
     "prefer-stable": false,
     "platform": {
-        "php": "~5.5.9"
+        "php": "~5.5"
     },
     "platform-dev": {
         "ext-pdo_sqlite": "*"
