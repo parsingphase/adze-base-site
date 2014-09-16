@@ -23,7 +23,8 @@
     "require": {
         "parsingphase/adze":"dev-master",
         "parsingphase/blog":"dev-master",
-        "php": "~5.5.9",
+        "parsingphase/phaseorg-styling":"dev-master",
+        "php": "~5.5",
         "components/bootstrap": "~3.2",
         "components/jqueryui": "~1.11",
         "components/handlebars.js": "~2.0"
