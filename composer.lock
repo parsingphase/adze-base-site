@@ -910,12 +910,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/parsingphase/adze.git",
-                "reference": "e7c51e5f4d23ef39736a500d538c6cfddd0cbccb"
+                "reference": "c5507decb51cd4eb40786fb1fb011e24740ad2c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/parsingphase/adze/zipball/e7c51e5f4d23ef39736a500d538c6cfddd0cbccb",
-                "reference": "e7c51e5f4d23ef39736a500d538c6cfddd0cbccb",
+                "url": "https://api.github.com/repos/parsingphase/adze/zipball/c5507decb51cd4eb40786fb1fb011e24740ad2c1",
+                "reference": "c5507decb51cd4eb40786fb1fb011e24740ad2c1",
                 "shasum": ""
             },
             "require": {
@@ -969,7 +969,7 @@
                 "source": "https://github.com/parsingphase/adze/tree/master",
                 "issues": "https://github.com/parsingphase/adze/issues"
             },
-            "time": "2014-09-16 16:34:31"
+            "time": "2014-09-16 16:47:39"
         },
         {
             "name": "parsingphase/blog",
@@ -977,12 +977,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/parsingphase/blog.git",
-                "reference": "65e47d0b74ad54e3cf51d05d7040eb988712d92a"
+                "reference": "74d38c6b2ce7ab00aa8203ffb2a92d9403101e01"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/parsingphase/blog/zipball/65e47d0b74ad54e3cf51d05d7040eb988712d92a",
-                "reference": "65e47d0b74ad54e3cf51d05d7040eb988712d92a",
+                "url": "https://api.github.com/repos/parsingphase/blog/zipball/74d38c6b2ce7ab00aa8203ffb2a92d9403101e01",
+                "reference": "74d38c6b2ce7ab00aa8203ffb2a92d9403101e01",
                 "shasum": ""
             },
             "require": {
@@ -1023,7 +1023,7 @@
                 "source": "https://github.com/parsingphase/blog/tree/master",
                 "issues": "https://github.com/parsingphase/blog/issues"
             },
-            "time": "2014-09-16 16:05:18"
+            "time": "2014-09-17 15:54:44"
         },
         {
             "name": "parsingphase/phaseorg-styling",
@@ -1031,7 +1031,7 @@
             "source": {
                 "type": "git",
                 "url": "git@bitbucket.org:parsingphase/phaseorg-styling.git",
-                "reference": "d1ede7991a206b97363ceae4c41028b60f194a5c"
+                "reference": "57bb48242a835a91148bbcf95fa93d87d7f96161"
             },
             "require": {
                 "php": "~5.5"
@@ -1040,7 +1040,7 @@
                 "leafo/lessphp": "~0.4",
                 "phploc/phploc": "~2.0",
                 "phpunit/phpunit": "~4.2",
-                "squizlabs/php_codesniffer": "*",
+                "squizlabs/php_codesniffer": "~1.5",
                 "theseer/phpdox": "~0.6"
             },
             "type": "library",
@@ -1064,7 +1064,7 @@
                 }
             ],
             "description": "Resources for phase.org",
-            "time": "2014-09-16 15:32:02"
+            "time": "2014-09-17 15:48:03"
         },
         {
             "name": "pimple/pimple",
