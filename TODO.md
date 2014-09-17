@@ -24,5 +24,7 @@
  - Use blog-specific security tokens
  - Resync index.php
  - Add WebTests to Adze
+ - Register modules on Packagist
+ - Add file upload and management
  - Interface to Twitter, Medium, Quora etc
  - Implement OpenID identity provider
