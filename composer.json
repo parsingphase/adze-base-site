@@ -20,14 +20,14 @@
         },
         {
             "type": "vcs",
-            "url": "git@bitbucket.org:parsingphase/phaseorg-styling.git"
+            "url": "git@bitbucket.org:parsingphase/tdd-deciphered-styling.git"
         }
     ],
     "minimum-stability": "stable",
     "require": {
         "parsingphase/adze":"dev-master",
         "parsingphase/blog":"dev-master",
-        "parsingphase/phaseorg-styling":"dev-master",
+        "parsingphase/tdd-deciphered-styling":"dev-master",
         "php": "~5.5",
         "components/bootstrap": "~3.2",
         "components/jqueryui": "~1.11",

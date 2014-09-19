@@ -32,6 +32,6 @@ $app->mount('/blog', new BlogControllerProvider());
 
 $app->setUpErrorHandling();
 
-$app->register(new \Phase\PhaseOrg\StyleServiceProvider());
+$app->register(new \Phase\TddDeciphered\StyleServiceProvider());
 
 $app->run();

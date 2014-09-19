@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "01d2f23903072c4fb5bae84a274fd693",
+    "hash": "d017372c87b01be624fbfdc7ef5fab2b",
     "packages": [
         {
             "name": "components/bootstrap",
@@ -910,12 +910,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/parsingphase/adze.git",
-                "reference": "c5507decb51cd4eb40786fb1fb011e24740ad2c1"
+                "reference": "b45c5a1228e0c9cdc7da36c15653457c4fcb2d4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/parsingphase/adze/zipball/c5507decb51cd4eb40786fb1fb011e24740ad2c1",
-                "reference": "c5507decb51cd4eb40786fb1fb011e24740ad2c1",
+                "url": "https://api.github.com/repos/parsingphase/adze/zipball/b45c5a1228e0c9cdc7da36c15653457c4fcb2d4e",
+                "reference": "b45c5a1228e0c9cdc7da36c15653457c4fcb2d4e",
                 "shasum": ""
             },
             "require": {
@@ -969,7 +969,7 @@
                 "source": "https://github.com/parsingphase/adze/tree/master",
                 "issues": "https://github.com/parsingphase/adze/issues"
             },
-            "time": "2014-09-16 16:47:39"
+            "time": "2014-09-17 21:52:30"
         },
         {
             "name": "parsingphase/blog",
@@ -977,12 +977,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/parsingphase/blog.git",
-                "reference": "74d38c6b2ce7ab00aa8203ffb2a92d9403101e01"
+                "reference": "7a7bbde11f424f5b5208c7d56ee994d71ff20f12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/parsingphase/blog/zipball/74d38c6b2ce7ab00aa8203ffb2a92d9403101e01",
-                "reference": "74d38c6b2ce7ab00aa8203ffb2a92d9403101e01",
+                "url": "https://api.github.com/repos/parsingphase/blog/zipball/7a7bbde11f424f5b5208c7d56ee994d71ff20f12",
+                "reference": "7a7bbde11f424f5b5208c7d56ee994d71ff20f12",
                 "shasum": ""
             },
             "require": {
@@ -1023,15 +1023,15 @@
                 "source": "https://github.com/parsingphase/blog/tree/master",
                 "issues": "https://github.com/parsingphase/blog/issues"
             },
-            "time": "2014-09-17 15:54:44"
+            "time": "2014-09-17 21:56:55"
         },
         {
-            "name": "parsingphase/phaseorg-styling",
+            "name": "parsingphase/tdd-deciphered-styling",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "git@bitbucket.org:parsingphase/phaseorg-styling.git",
-                "reference": "57bb48242a835a91148bbcf95fa93d87d7f96161"
+                "url": "git@bitbucket.org:parsingphase/tdd-deciphered-styling.git",
+                "reference": "5704342753afeb6fe89d93dcd89c6858c2731cb5"
             },
             "require": {
                 "php": "~5.5"
@@ -1051,7 +1051,7 @@
             },
             "autoload": {
                 "psr-0": {
-                    "Phase\\PhaseOrg\\": "src/"
+                    "Phase\\TddDeciphered\\": "src/"
                 }
             },
             "license": [
@@ -1063,8 +1063,8 @@
                     "email": "richard@phase.org"
                 }
             ],
-            "description": "Resources for phase.org",
-            "time": "2014-09-17 15:48:03"
+            "description": "Resources for tdd-deciphered.com",
+            "time": "2014-09-19 10:19:03"
         },
         {
             "name": "pimple/pimple",
@@ -3748,7 +3748,7 @@
     "stability-flags": {
         "parsingphase/adze": 20,
         "parsingphase/blog": 20,
-        "parsingphase/phaseorg-styling": 20
+        "parsingphase/tdd-deciphered-styling": 20
     },
     "prefer-stable": false,
     "platform": {
