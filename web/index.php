@@ -9,7 +9,7 @@
  */
 
 use Phase\Adze\Application;
-use Phase\Blog\Silex\BlogControllerProvider;
+use Phase\Book\Silex\BookControllerProvider;
 use Symfony\Component\HttpFoundation\Request;
 
 require_once __DIR__ . '/../vendor/autoload.php';
@@ -25,10 +25,10 @@ $resourceController->addPathMapping('components', dirname(__DIR__) . '/component
 
 //TODO remove this default route and set your own
 //$app->setUpDefaultHomepage();
-$app->setDefaultRouteByUrl('/blog');
+//$app->setDefaultRouteByUrl('/blog');
 
 //Note: template setup below will be cleaned up as code is refactored
-$app->mount('/blog', new BlogControllerProvider());
+$app->mount('/', new BookControllerProvider());
 
 $app->setUpErrorHandling();
 
