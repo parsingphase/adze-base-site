@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8fc87ebfd357d2becd9d778b75f5144b",
+    "hash": "83448b350e9987fef51f188c26a3bbf4",
     "packages": [
         {
             "name": "components/bootstrap",
@@ -1019,6 +1019,60 @@
                 "issues": "https://github.com/parsingphase/blog/issues"
             },
             "time": "2014-09-21 10:48:33"
+        },
+        {
+            "name": "parsingphase/book",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/parsingphase/book.git",
+                "reference": "af374adc88f38593c020c8f20299aa07181ba464"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/parsingphase/book/zipball/af374adc88f38593c020c8f20299aa07181ba464",
+                "reference": "af374adc88f38593c020c8f20299aa07181ba464",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/dbal": "~2.4",
+                "parsingphase/adze": "dev-master",
+                "php": "~5.5"
+            },
+            "require-dev": {
+                "ext-pdo_sqlite": "*",
+                "leafo/lessphp": "~0.4",
+                "phploc/phploc": "~2.0",
+                "phpunit/phpunit": "~4.2",
+                "squizlabs/php_codesniffer": "~1.5",
+                "theseer/phpdox": "~0.6"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Phase\\Book\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Richard George",
+                    "email": "richard@phase.org"
+                }
+            ],
+            "description": "Book module for Adze applications",
+            "support": {
+                "source": "https://github.com/parsingphase/book/tree/master",
+                "issues": "https://github.com/parsingphase/book/issues"
+            },
+            "time": "2014-09-22 09:34:03"
         },
         {
             "name": "parsingphase/tdd-deciphered-styling",
@@ -3742,6 +3796,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "parsingphase/adze": 20,
+        "parsingphase/book": 20,
         "parsingphase/blog": 20,
         "parsingphase/tdd-deciphered-styling": 20
     },
