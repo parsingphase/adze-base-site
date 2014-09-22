@@ -11,16 +11,8 @@
     ],
     "repositories": [
         {
-            "type": "vcs",
-            "url": "https://github.com/parsingphase/adze.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/parsingphase/blog.git"
-        },
-        {
-            "type": "vcs",
-            "url": "git@bitbucket.org:parsingphase/tdd-deciphered-styling.git"
+            "type": "composer",
+            "url": "http://satis.phase.org"
         }
     ],
     "minimum-stability": "stable",

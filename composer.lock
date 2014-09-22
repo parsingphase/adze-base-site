@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d017372c87b01be624fbfdc7ef5fab2b",
+    "hash": "8fc87ebfd357d2becd9d778b75f5144b",
     "packages": [
         {
             "name": "components/bootstrap",
@@ -712,16 +712,16 @@
         },
         {
             "name": "jasongrimes/silex-simpleuser",
-            "version": "1.2",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jasongrimes/silex-simpleuser.git",
-                "reference": "4d8c65435e67508d39c2478f8c4592d250b8fdb9"
+                "reference": "ca6fda822c769d06627f589990253f0ca8406cc8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jasongrimes/silex-simpleuser/zipball/4d8c65435e67508d39c2478f8c4592d250b8fdb9",
-                "reference": "4d8c65435e67508d39c2478f8c4592d250b8fdb9",
+                "url": "https://api.github.com/repos/jasongrimes/silex-simpleuser/zipball/ca6fda822c769d06627f589990253f0ca8406cc8",
+                "reference": "ca6fda822c769d06627f589990253f0ca8406cc8",
                 "shasum": ""
             },
             "require": {
@@ -758,7 +758,7 @@
                 "user",
                 "user provider"
             ],
-            "time": "2014-09-17 22:39:30"
+            "time": "2014-09-22 14:33:35"
         },
         {
             "name": "kriswallsmith/assetic",
