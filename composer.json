@@ -11,12 +11,8 @@
     ],
     "repositories": [
         {
-            "type": "vcs",
-            "url": "https://github.com/parsingphase/adze.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/parsingphase/blog.git"
+            "type": "composer",
+            "url": "http://satis.phase.org"
         }
     ],
     "minimum-stability": "stable",

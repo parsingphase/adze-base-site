@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "909ef77fe413056c2944c097e98ff835",
+    "hash": "1431e40646553f3cce3fcc31c535441b",
     "packages": [
         {
             "name": "components/bootstrap",
@@ -315,16 +315,16 @@
         },
         {
             "name": "doctrine/cache",
-            "version": "v1.3.0",
+            "version": "v1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "e16d7adf45664a50fa86f515b6d5e7f670130449"
+                "reference": "cf483685798a72c93bf4206e3dd6358ea07d64e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/e16d7adf45664a50fa86f515b6d5e7f670130449",
-                "reference": "e16d7adf45664a50fa86f515b6d5e7f670130449",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/cf483685798a72c93bf4206e3dd6358ea07d64e7",
+                "reference": "cf483685798a72c93bf4206e3dd6358ea07d64e7",
                 "shasum": ""
             },
             "require": {
@@ -340,7 +340,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.4.x-dev"
                 }
             },
             "autoload": {
@@ -354,17 +354,6 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com",
-                    "homepage": "http://www.jwage.com/",
-                    "role": "Creator"
-                },
-                {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com",
-                    "homepage": "http://www.instaclick.com"
-                },
-                {
                     "name": "Roman Borschel",
                     "email": "roman@code-factory.org"
                 },
@@ -373,10 +362,16 @@
                     "email": "kontakt@beberlei.de"
                 },
                 {
+                    "name": "Guilherme Blanco",
+                    "email": "guilhermeblanco@gmail.com"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
                     "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
-                    "role": "Developer of wrapped JMSSerializerBundle"
+                    "email": "schmittjoh@gmail.com"
                 }
             ],
             "description": "Caching library offering an object-oriented API for many cache backends",
@@ -385,7 +380,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2013-10-25 19:04:14"
+            "time": "2014-09-17 14:24:04"
         },
         {
             "name": "doctrine/collections",
@@ -717,16 +712,16 @@
         },
         {
             "name": "jasongrimes/silex-simpleuser",
-            "version": "1.0",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jasongrimes/silex-simpleuser.git",
-                "reference": "47a079421ceb7169c7ab19ba78bfa9d02ae5027d"
+                "reference": "ca6fda822c769d06627f589990253f0ca8406cc8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jasongrimes/silex-simpleuser/zipball/47a079421ceb7169c7ab19ba78bfa9d02ae5027d",
-                "reference": "47a079421ceb7169c7ab19ba78bfa9d02ae5027d",
+                "url": "https://api.github.com/repos/jasongrimes/silex-simpleuser/zipball/ca6fda822c769d06627f589990253f0ca8406cc8",
+                "reference": "ca6fda822c769d06627f589990253f0ca8406cc8",
                 "shasum": ""
             },
             "require": {
@@ -763,7 +758,7 @@
                 "user",
                 "user provider"
             ],
-            "time": "2014-09-04 05:05:19"
+            "time": "2014-09-22 14:33:35"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -910,12 +905,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/parsingphase/adze.git",
-                "reference": "c5507decb51cd4eb40786fb1fb011e24740ad2c1"
+                "reference": "b45c5a1228e0c9cdc7da36c15653457c4fcb2d4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/parsingphase/adze/zipball/c5507decb51cd4eb40786fb1fb011e24740ad2c1",
-                "reference": "c5507decb51cd4eb40786fb1fb011e24740ad2c1",
+                "url": "https://api.github.com/repos/parsingphase/adze/zipball/b45c5a1228e0c9cdc7da36c15653457c4fcb2d4e",
+                "reference": "b45c5a1228e0c9cdc7da36c15653457c4fcb2d4e",
                 "shasum": ""
             },
             "require": {
@@ -969,7 +964,7 @@
                 "source": "https://github.com/parsingphase/adze/tree/master",
                 "issues": "https://github.com/parsingphase/adze/issues"
             },
-            "time": "2014-09-16 16:47:39"
+            "time": "2014-09-17 21:52:30"
         },
         {
             "name": "parsingphase/blog",
@@ -977,12 +972,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/parsingphase/blog.git",
-                "reference": "470d083588d9bb4a903b58210fc0b9c544b044cd"
+                "reference": "fd74c221054d9f78edc17a0b57b05118e9096a35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/parsingphase/blog/zipball/470d083588d9bb4a903b58210fc0b9c544b044cd",
-                "reference": "470d083588d9bb4a903b58210fc0b9c544b044cd",
+                "url": "https://api.github.com/repos/parsingphase/blog/zipball/fd74c221054d9f78edc17a0b57b05118e9096a35",
+                "reference": "fd74c221054d9f78edc17a0b57b05118e9096a35",
                 "shasum": ""
             },
             "require": {
@@ -1023,7 +1018,7 @@
                 "source": "https://github.com/parsingphase/blog/tree/master",
                 "issues": "https://github.com/parsingphase/blog/issues"
             },
-            "time": "2014-09-16 16:48:42"
+            "time": "2014-09-21 10:48:33"
         },
         {
             "name": "pimple/pimple",
