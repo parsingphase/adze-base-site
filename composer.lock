@@ -1129,12 +1129,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/parsingphase/book.git",
-                "reference": "a5bb86ca828868789e96ed38cdc38c7ad5af9af2"
+                "reference": "cfe6326f5b093973427a7209f6bd484110fee475"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/parsingphase/book/zipball/a5bb86ca828868789e96ed38cdc38c7ad5af9af2",
-                "reference": "a5bb86ca828868789e96ed38cdc38c7ad5af9af2",
+                "url": "https://api.github.com/repos/parsingphase/book/zipball/cfe6326f5b093973427a7209f6bd484110fee475",
+                "reference": "cfe6326f5b093973427a7209f6bd484110fee475",
                 "shasum": ""
             },
             "require": {
@@ -1177,7 +1177,7 @@
                 "source": "https://github.com/parsingphase/book/tree/master",
                 "issues": "https://github.com/parsingphase/book/issues"
             },
-            "time": "2014-09-28 17:40:45"
+            "time": "2014-09-28 21:08:38"
         },
         {
             "name": "parsingphase/tdd-deciphered-styling",
@@ -1185,7 +1185,7 @@
             "source": {
                 "type": "git",
                 "url": "git@bitbucket.org:parsingphase/tdd-deciphered-styling.git",
-                "reference": "11d6d11599d5df0161616d8c2bcc370fa0ba2d61"
+                "reference": "519404fcce15b94b3032ff08008ef1fcdad756dc"
             },
             "require": {
                 "php": "~5.5"
@@ -1218,7 +1218,7 @@
                 }
             ],
             "description": "Resources for tdd-deciphered.com",
-            "time": "2014-09-28 17:37:57"
+            "time": "2014-09-28 21:19:47"
         },
         {
             "name": "pimple/pimple",
