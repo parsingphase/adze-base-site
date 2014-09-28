@@ -7,6 +7,58 @@
     "hash": "83448b350e9987fef51f188c26a3bbf4",
     "packages": [
         {
+            "name": "aptoma/twig-markdown",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aptoma/twig-markdown.git",
+                "reference": "088abf151a227efb5461a14481d0e07c55612914"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/aptoma/twig-markdown/zipball/088abf151a227efb5461a14481d0e07c55612914",
+                "reference": "088abf151a227efb5461a14481d0e07c55612914",
+                "shasum": ""
+            },
+            "require": {
+                "twig/twig": "~1"
+            },
+            "require-dev": {
+                "michelf/php-markdown": "~1",
+                "phpunit/phpunit": "~4.0",
+                "satooshi/php-coveralls": "~0.6"
+            },
+            "suggest": {
+                "michelf/php-markdown": "Original Markdown engine with MarkdownExtra."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Aptoma": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joris Berthelot",
+                    "email": "joris@berthelot.tel"
+                },
+                {
+                    "name": "Gunnar Lium",
+                    "email": "gunnar@aptoma.com"
+                }
+            ],
+            "description": "Twig extension to work with Markdown content",
+            "keywords": [
+                "markdown",
+                "twig"
+            ],
+            "time": "2014-07-24 14:19:42"
+        },
+        {
             "name": "components/bootstrap",
             "version": "3.2.0",
             "source": {
@@ -832,6 +884,57 @@
             "time": "2013-07-19 00:03:27"
         },
         {
+            "name": "michelf/php-markdown",
+            "version": "1.4.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/michelf/php-markdown.git",
+                "reference": "de9a19c7bf352d41cc99ed86c3c0ef17e87394b6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/michelf/php-markdown/zipball/de9a19c7bf352d41cc99ed86c3c0ef17e87394b6",
+                "reference": "de9a19c7bf352d41cc99ed86c3c0ef17e87394b6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-lib": "1.4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Michelf": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Michel Fortin",
+                    "email": "michel.fortin@michelf.ca",
+                    "homepage": "http://michelf.ca/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "John Gruber",
+                    "homepage": "http://daringfireball.net/"
+                }
+            ],
+            "description": "PHP Markdown",
+            "homepage": "http://michelf.ca/projects/php-markdown/",
+            "keywords": [
+                "markdown"
+            ],
+            "time": "2014-05-05 02:43:50"
+        },
+        {
             "name": "monolog/monolog",
             "version": "1.10.0",
             "source": {
@@ -905,12 +1008,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/parsingphase/adze.git",
-                "reference": "b45c5a1228e0c9cdc7da36c15653457c4fcb2d4e"
+                "reference": "8d9595807688f816bacbff32a6816f6fbf30d5b6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/parsingphase/adze/zipball/b45c5a1228e0c9cdc7da36c15653457c4fcb2d4e",
-                "reference": "b45c5a1228e0c9cdc7da36c15653457c4fcb2d4e",
+                "url": "https://api.github.com/repos/parsingphase/adze/zipball/8d9595807688f816bacbff32a6816f6fbf30d5b6",
+                "reference": "8d9595807688f816bacbff32a6816f6fbf30d5b6",
                 "shasum": ""
             },
             "require": {
@@ -919,7 +1022,7 @@
                 "components/jqueryui": "~1.11",
                 "doctrine/dbal": "~2.4",
                 "ext-intl": "*",
-                "jasongrimes/silex-simpleuser": "~1.0",
+                "jasongrimes/silex-simpleuser": "~1.1,!=1.2.0",
                 "monolog/monolog": "~1.10",
                 "php": "~5.5",
                 "silex/silex": "~1.2",
@@ -964,7 +1067,7 @@
                 "source": "https://github.com/parsingphase/adze/tree/master",
                 "issues": "https://github.com/parsingphase/adze/issues"
             },
-            "time": "2014-09-17 21:52:30"
+            "time": "2014-09-22 15:50:03"
         },
         {
             "name": "parsingphase/blog",
@@ -1026,16 +1129,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/parsingphase/book.git",
-                "reference": "af374adc88f38593c020c8f20299aa07181ba464"
+                "reference": "a5bb86ca828868789e96ed38cdc38c7ad5af9af2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/parsingphase/book/zipball/af374adc88f38593c020c8f20299aa07181ba464",
-                "reference": "af374adc88f38593c020c8f20299aa07181ba464",
+                "url": "https://api.github.com/repos/parsingphase/book/zipball/a5bb86ca828868789e96ed38cdc38c7ad5af9af2",
+                "reference": "a5bb86ca828868789e96ed38cdc38c7ad5af9af2",
                 "shasum": ""
             },
             "require": {
+                "aptoma/twig-markdown": "~1.0",
                 "doctrine/dbal": "~2.4",
+                "michelf/php-markdown": "~1.4",
                 "parsingphase/adze": "dev-master",
                 "php": "~5.5"
             },
@@ -1072,7 +1177,7 @@
                 "source": "https://github.com/parsingphase/book/tree/master",
                 "issues": "https://github.com/parsingphase/book/issues"
             },
-            "time": "2014-09-22 09:34:03"
+            "time": "2014-09-28 17:40:45"
         },
         {
             "name": "parsingphase/tdd-deciphered-styling",
@@ -1080,7 +1185,7 @@
             "source": {
                 "type": "git",
                 "url": "git@bitbucket.org:parsingphase/tdd-deciphered-styling.git",
-                "reference": "9ab88e58b4849f238f042e86238457bb75306aee"
+                "reference": "11d6d11599d5df0161616d8c2bcc370fa0ba2d61"
             },
             "require": {
                 "php": "~5.5"
@@ -1113,7 +1218,7 @@
                 }
             ],
             "description": "Resources for tdd-deciphered.com",
-            "time": "2014-09-19 15:09:33"
+            "time": "2014-09-28 17:37:57"
         },
         {
             "name": "pimple/pimple",
