@@ -1185,7 +1185,7 @@
             "source": {
                 "type": "git",
                 "url": "git@bitbucket.org:parsingphase/tdd-deciphered-styling.git",
-                "reference": "519404fcce15b94b3032ff08008ef1fcdad756dc"
+                "reference": "5f478ce2295b6b287f50a216b64a6dca8950a6eb"
             },
             "require": {
                 "php": "~5.5"
@@ -1218,7 +1218,7 @@
                 }
             ],
             "description": "Resources for tdd-deciphered.com",
-            "time": "2014-09-28 21:19:47"
+            "time": "2014-10-03 18:19:28"
         },
         {
             "name": "pimple/pimple",
