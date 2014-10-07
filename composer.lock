@@ -1008,12 +1008,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/parsingphase/adze.git",
-                "reference": "8d9595807688f816bacbff32a6816f6fbf30d5b6"
+                "reference": "2788c57fa385bfb43974cdf3c33a24ec63fc35f5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/parsingphase/adze/zipball/8d9595807688f816bacbff32a6816f6fbf30d5b6",
-                "reference": "8d9595807688f816bacbff32a6816f6fbf30d5b6",
+                "url": "https://api.github.com/repos/parsingphase/adze/zipball/2788c57fa385bfb43974cdf3c33a24ec63fc35f5",
+                "reference": "2788c57fa385bfb43974cdf3c33a24ec63fc35f5",
                 "shasum": ""
             },
             "require": {
@@ -1067,7 +1067,7 @@
                 "source": "https://github.com/parsingphase/adze/tree/master",
                 "issues": "https://github.com/parsingphase/adze/issues"
             },
-            "time": "2014-09-22 15:50:03"
+            "time": "2014-10-07 07:08:22"
         },
         {
             "name": "parsingphase/blog",
@@ -1075,12 +1075,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/parsingphase/blog.git",
-                "reference": "fd74c221054d9f78edc17a0b57b05118e9096a35"
+                "reference": "c21b7b13dd557fa3a33582ff7f69c8e7d8684e6b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/parsingphase/blog/zipball/fd74c221054d9f78edc17a0b57b05118e9096a35",
-                "reference": "fd74c221054d9f78edc17a0b57b05118e9096a35",
+                "url": "https://api.github.com/repos/parsingphase/blog/zipball/c21b7b13dd557fa3a33582ff7f69c8e7d8684e6b",
+                "reference": "c21b7b13dd557fa3a33582ff7f69c8e7d8684e6b",
                 "shasum": ""
             },
             "require": {
@@ -1121,7 +1121,7 @@
                 "source": "https://github.com/parsingphase/blog/tree/master",
                 "issues": "https://github.com/parsingphase/blog/issues"
             },
-            "time": "2014-09-21 10:48:33"
+            "time": "2014-10-07 07:17:18"
         },
         {
             "name": "parsingphase/book",
@@ -1129,12 +1129,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/parsingphase/book.git",
-                "reference": "a08bd747f22928b946cabbed616998c0d2b89c3f"
+                "reference": "f2dcf251c4f2478e5e8c98117a52717a3d7d9758"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/parsingphase/book/zipball/a08bd747f22928b946cabbed616998c0d2b89c3f",
-                "reference": "a08bd747f22928b946cabbed616998c0d2b89c3f",
+                "url": "https://api.github.com/repos/parsingphase/book/zipball/f2dcf251c4f2478e5e8c98117a52717a3d7d9758",
+                "reference": "f2dcf251c4f2478e5e8c98117a52717a3d7d9758",
                 "shasum": ""
             },
             "require": {
@@ -1177,7 +1177,7 @@
                 "source": "https://github.com/parsingphase/book/tree/master",
                 "issues": "https://github.com/parsingphase/book/issues"
             },
-            "time": "2014-09-29 07:39:45"
+            "time": "2014-10-07 07:02:13"
         },
         {
             "name": "parsingphase/tdd-deciphered-styling",
