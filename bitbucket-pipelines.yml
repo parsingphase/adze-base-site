@@ -11,6 +11,7 @@ pipelines:
         caches:
           - composer
         script:
+          - mkdir -p /usr/share/man/man1/ # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=863199
           - apt-get update && apt-get install -y unzip ant
           - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
           - ant test
