@@ -12,30 +12,28 @@
     "repositories": [
         {
             "type": "composer",
-            "url": "http://satis.phase.org"
+            "url": "https://satis.phase.org"
         }
     ],
     "minimum-stability": "stable",
     "require": {
-        "parsingphase/adze": "dev-master",
-        "parsingphase/blog": "dev-master",
-        "parsingphase/phaseorg-styling": "dev-master",
-        "php": "~5.5",
+        "php": "~5.5||^7.0",
         "components/bootstrap": "~3.2",
+        "components/handlebars.js": "~2.0",
         "components/jqueryui": "~1.11",
-        "components/handlebars.js": "~2.0"
+        "parsingphase/adze": "^1.1.1",
+        "parsingphase/blog": "^1.1.2",
+        "parsingphase/phaseorg-styling": "^1.0.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "~4.2",
-        "theseer/phpdox": "~0.6",
-        "phploc/phploc": "~2.0",
-        "squizlabs/php_codesniffer": "~1.5",
-        "ext-pdo_sqlite": "*",
-        "leafo/lessphp": "~0.4"
+        "squizlabs/php_codesniffer": "~1.5"
     },
     "extra": {
         "branch-alias": {
             "dev-master": "0.1.x-dev"
         }
+    },
+    "config": {
+        "sort-packages": true
     }
 }
