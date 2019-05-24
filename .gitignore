@@ -4,3 +4,5 @@ config
 vendor
 .idea
 tests/resources/*.tmp
+logs
+sitecaches
