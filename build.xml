@@ -26,6 +26,7 @@
             <arg value="-n"/>
             <fileset dir="${basedir}">
                 <include name="**/*.php"/>
+                <include name="**/*.php.dist"/>
                 <exclude name="vendor/"/>
             </fileset>
         </apply>
