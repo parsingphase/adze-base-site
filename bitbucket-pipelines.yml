@@ -3,7 +3,7 @@
 # Only use spaces to indent your .yml configuration.
 # -----
 # You can specify a custom docker image from Docker Hub as your build environment.
-image: php:7.1.29
+image: parsingphase/php-73-build
 
 pipelines:
   default:
@@ -11,7 +11,5 @@ pipelines:
         caches:
           - composer
         script:
-          - mkdir -p /usr/share/man/man1/ # https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=863199
-          - apt-get update && apt-get install -y unzip ant
           - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
           - ant test
