@@ -23,7 +23,7 @@
         "components/jqueryui": "~1.11",
         "parsingphase/adze": "^1.1.1",
         "parsingphase/blog": "^1.1.2",
-        "parsingphase/phaseorg-styling": "^1.0.0"
+        "parsingphase/phaseorg-styling": "^1.1.0"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "~1.5"

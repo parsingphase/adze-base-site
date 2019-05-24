@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "68446bfc6e18c5f50296439d423532cd",
+    "content-hash": "ef8c35c8cfbff543285febb634d6ef34",
     "packages": [
         {
             "name": "components/bootstrap",
@@ -946,11 +946,11 @@
         },
         {
             "name": "parsingphase/phaseorg-styling",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "git@bitbucket.org:parsingphase/phaseorg-styling.git",
-                "reference": "b2a0860f49db225e1c17fc211433ac616c8374a4"
+                "reference": "5e93f2bfaa27c6054bd56233c15cca0c3ff31667"
             },
             "require": {
                 "php": "~5.5|^7.0"
@@ -983,7 +983,7 @@
                 }
             ],
             "description": "Resources for phase.org",
-            "time": "2016-08-09T11:13:53+00:00"
+            "time": "2019-05-24T20:34:52+00:00"
         },
         {
             "name": "pimple/pimple",
