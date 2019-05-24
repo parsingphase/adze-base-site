@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4a40d0c38a044c2b53915c208ab0d499",
+    "content-hash": "63f19336f5893da293365437ef8dee46",
     "packages": [
         {
             "name": "components/bootstrap",
@@ -825,7 +825,7 @@
         },
         {
             "name": "parsingphase/adze",
-            "version": "dev-master",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/parsingphase/adze.git",
@@ -892,21 +892,21 @@
         },
         {
             "name": "parsingphase/blog",
-            "version": "dev-master",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/parsingphase/blog.git",
-                "reference": "58d6e4fd0c89081f6910385f62eb12cb3bc82fb5"
+                "reference": "4432b2bd01614ceefa661d0352d6386ad7ef09d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/parsingphase/blog/zipball/58d6e4fd0c89081f6910385f62eb12cb3bc82fb5",
-                "reference": "58d6e4fd0c89081f6910385f62eb12cb3bc82fb5",
+                "url": "https://api.github.com/repos/parsingphase/blog/zipball/4432b2bd01614ceefa661d0352d6386ad7ef09d1",
+                "reference": "4432b2bd01614ceefa661d0352d6386ad7ef09d1",
                 "shasum": ""
             },
             "require": {
                 "doctrine/dbal": "~2.4",
-                "parsingphase/adze": "dev-master",
+                "parsingphase/adze": "^1.1",
                 "php": "~5.5|^7.0"
             },
             "require-dev": {
@@ -939,10 +939,10 @@
             ],
             "description": "Blog module for Adze applications",
             "support": {
-                "source": "https://github.com/parsingphase/blog/tree/master",
+                "source": "https://github.com/parsingphase/blog/tree/1.1.2",
                 "issues": "https://github.com/parsingphase/blog/issues"
             },
-            "time": "2019-05-23T07:56:16+00:00"
+            "time": "2019-05-24T06:04:00+00:00"
         },
         {
             "name": "pimple/pimple",
@@ -3538,10 +3538,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "parsingphase/adze": 20,
-        "parsingphase/blog": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
