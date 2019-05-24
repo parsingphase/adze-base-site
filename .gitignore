@@ -5,3 +5,5 @@ vendor
 web
 .idea
 tests/resources/*.tmp
+logs
+sitecaches
