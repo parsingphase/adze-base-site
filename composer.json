@@ -18,6 +18,7 @@
     "minimum-stability": "stable",
     "require": {
         "php": "~5.5||^7.0",
+        "ext-pdo_mysql": "*",
         "components/bootstrap": "~3.2",
         "components/handlebars.js": "~2.0",
         "components/jqueryui": "~1.11",
