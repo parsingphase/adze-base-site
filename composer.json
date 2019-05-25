@@ -17,14 +17,14 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "parsingphase/book":"dev-master",
-        "parsingphase/tdd-deciphered-styling":"dev-master",
-        "parsingphase/adze":"^1.1.1",
-        "parsingphase/blog":"^1.1.2",
         "php": "~5.5||^7.0",
         "components/bootstrap": "~3.2",
+        "components/handlebars.js": "~2.0",
         "components/jqueryui": "~1.11",
-        "components/handlebars.js": "~2.0"
+        "parsingphase/adze": "^1.1.1",
+        "parsingphase/blog": "^1.1.2",
+        "parsingphase/book": "^1.0.2",
+        "parsingphase/tdd-deciphered-styling": "^1.2.1"
     },
     "require-dev": {
         "squizlabs/php_codesniffer": "~1.5"
